@@ -1,0 +1,63 @@
+﻿/*  DinoNuggets.cs
+ *  Author: Logan Jones
+ */
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace DinoDiner.Menu.Entrees
+{
+    public class DinoNuggets
+    {
+        /// <summary>
+        /// The amount of DinoNuggets included in the order
+        /// </summary>
+        private uint nuggets = 6;
+
+        /// <summary>
+        /// How much the Dino Nuggets costs
+        /// </summary>
+        public double Price { get; set; }
+
+        /// <summary>
+        /// How many calories are in the Dino Nuggets
+        /// </summary>
+        public uint Calories { get; set; }
+
+        /// <summary>
+        /// A list of the ingredients that are included in the current order of the Dino Nuggets
+        /// </summary>
+        public List<string> Ingredients
+        {
+            get
+            {
+                List<string> ingredients = new List<string>();
+                for(int i = 0; i < nuggets; i++)
+                {
+                    ingredients.Add("Chicken Nugget");
+                }
+                return ingredients;
+            }
+        }
+
+        /// <summary>
+        /// Creates a DinoNuggets object with the correct price and calories
+        /// </summary>
+        public DinoNuggets()
+        {
+            this.Price = 4.25;
+            this.Calories = 59 * nuggets;
+        }
+
+        /// <summary>
+        /// allows the user to add a nugget to their order for an extra $0.25 and updates the calories accordingly
+        /// </summary>
+        public void AddNugget()
+        {
+            nuggets++;
+            Calories += 59;
+            Price += .25;
+        }
+    }
+}
