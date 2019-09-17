@@ -7,9 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Sides\MeteorMacAndCheeseTest.cs" />
-    <Compile Remove="Sides\MezzorellaSticksTest.cs" />
-    <Compile Remove="Sides\TriceritotsTest.cs" />
   </ItemGroup>
 
   <ItemGroup>
