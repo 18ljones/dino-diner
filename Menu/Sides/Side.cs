@@ -4,35 +4,33 @@ using System.Text;
 
 namespace DinoDiner.Menu.Sides
 {
-
+    /// <summary>
+    /// Enum representing the three sizes that a side can be
+    /// </summary>
     public enum Size
     {
+        /// <summary>
+        /// (0) represents the small Side size
+        /// </summary>
         Small,
+        /// <summary>
+        /// (1) represents the medium Side size
+        /// </summary>
         Medium, 
+        /// <summary>
+        /// (2) represents the Large Side size
+        /// </summary>
         Large
     }
 
-    public abstract class Side
+    /// <summary>
+    /// Abstract class representing all Side menu items
+    /// </summary>
+    public abstract class Side : MenuItem
     {
-        /// <summary>
-        /// Gets and sets the price
-        /// </summary>
-        public double Price { get; set; }
-
-        /// <summary>
-        /// Gets and sets the calories
-        /// </summary>
-        public uint Calories { get; set; }
-
-        /// <summary>
-        /// Gets the ingredients list
-        /// </summary>
-        public List<string> Ingredients { get; }
-
         /// <summary>
         /// Gets or sets the size
         /// </summary>
-        public Size Size { get; set; }
-
+        public abstract Size Size { get; set; }
     }
 }

@@ -1,0 +1,343 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Menu</name>
+    </assembly>
+    <members>
+        <member name="T:DinoDiner.Menu.Entrees.Brontowurst">
+            <summary>
+            A class representing the Brontowurst menu item
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Entrees.Brontowurst.bun">
+            <summary>
+            Whether the bun is included in the Brontowurst
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Entrees.Brontowurst.onions">
+            <summary>
+            Whether the onions are included in the Brontowurst
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Entrees.Brontowurst.peppers">
+            <summary>
+            Whether the peppers are included in the Brontowurst
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.Brontowurst.Price">
+            <summary>
+            How much the Brontowurst costs
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.Brontowurst.Calories">
+            <summary>
+            How many calories are in the Brontowurst
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.Brontowurst.Ingredients">
+            <summary>
+            A list of the ingredients that are included in the current order of the Brontowurst
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.Brontowurst.#ctor">
+            <summary>
+            Creates a Brontowurst object with the correct price and calories
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.Brontowurst.HoldBun">
+            <summary>
+            allows the user to not include a bun with his/her Brontowurst
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.Brontowurst.HoldPeppers">
+            <summary>
+            allows the user to not include the peppers with his/her Brontowurst
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.Brontowurst.HoldOnion">
+            <summary>
+            allows the user to not include the onions with his/her Brontowurst
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Entrees.DinoNuggets">
+            <summary>
+            A class representing the Dino Nuggets menu item
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.DinoNuggets.Price">
+            <summary>
+            How much the Dino Nuggets costs
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.DinoNuggets.Calories">
+            <summary>
+            How many calories are in the Dino Nuggets
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.DinoNuggets.Ingredients">
+            <summary>
+            A list of the ingredients that are included in the current order of the Dino Nuggets
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.DinoNuggets.#ctor">
+            <summary>
+            Creates a DinoNuggets object with the correct price and calories
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.DinoNuggets.AddNugget">
+            <summary>
+            allows the user to add a nugget to their order for an extra $0.25 and updates the calories accordingly
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Entrees.PrehistoricPBJ">
+            <summary>
+            A class representing the Prehistoric PBJ menu item
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Entrees.PterodactylWings">
+            <summary>
+            A class representing the Prerodactyl Wings menu item
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.PterodactylWings.Price">
+            <summary>
+            How much the Pterodactyl Wings costs
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.PterodactylWings.Calories">
+            <summary>
+            How many calories are in the Pterodactyl Wings
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.PterodactylWings.Ingredients">
+            <summary>
+            A list of the ingredients that are included in the current order of the Pterodactyl Wings
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.PterodactylWings.#ctor">
+            <summary>
+            Creates a PterodactylWings object with the correct price and calories
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Entrees.SteakosaurusBurger">
+            <summary>
+            A class representing the Steakosaurus Burger menu item
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.SteakosaurusBurger.Price">
+            <summary>
+            How much the Steakosaurus Burger costs
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.SteakosaurusBurger.Calories">
+            <summary>
+            How many calories are in the Steakosaurus Burger
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.SteakosaurusBurger.Ingredients">
+            <summary>
+            A list of the ingredients that are included in the current order of the Steakosaurus Burger
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.SteakosaurusBurger.#ctor">
+            <summary>
+            Creates a SteakosaurusBurger object with the correct price and calories
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.SteakosaurusBurger.HoldBun">
+            <summary>
+            allows the user to not include a bun with his/her Steakosaurus Burger
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.SteakosaurusBurger.HoldPickle">
+            <summary>
+            allows the user to not include the pickles with his/her Steakosaurus Burger
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.SteakosaurusBurger.HoldKetchup">
+            <summary>
+            allows the user to not include the ketchup with his/her Steakosaurus Burger
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.SteakosaurusBurger.HoldMustard">
+            <summary>
+            allows the user to not include the mustard with his/her Steakosaurus Burger
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Entrees.TRexKingBurger">
+            <summary>
+            A class representing the T-Rex King Burger menu item
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.TRexKingBurger.Price">
+            <summary>
+            How much the T-Rex King Burger costs
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.TRexKingBurger.Calories">
+            <summary>
+            How many calories are in the T-Rex King Burger
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.TRexKingBurger.Ingredients">
+            <summary>
+            A list of the ingredients that are included in the current order of the T-Rex King Burger
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.TRexKingBurger.#ctor">
+            <summary>
+            Creates a TRexKingBurger object with the correct price and calories
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.TRexKingBurger.HoldBun">
+            <summary>
+            allows the user to not include a bun with his/her T-Rex King Burger
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.TRexKingBurger.HoldLettuce">
+            <summary>
+            allows the user to not include lettuce with his/her T-Rex King Burger
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.TRexKingBurger.HoldTomato">
+            <summary>
+            allows the user to not include tomato with his/her T-Rex King Burger
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.TRexKingBurger.HoldOnion">
+            <summary>
+            allows the user to not include onion with his/her T-Rex King Burger
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.TRexKingBurger.HoldPickle">
+            <summary>
+            allows the user to not include the pickles with his/her T-Rex King Burger
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.TRexKingBurger.HoldKetchup">
+            <summary>
+            allows the user to not include the ketchup with his/her Steakosaurus Burger
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.TRexKingBurger.HoldMustard">
+            <summary>
+            allows the user to not include the mustard with his/her Steakosaurus Burger
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.TRexKingBurger.HoldMayo">
+            <summary>
+            allows the user to not include mayo with his/her T-Rex King Burger
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Entrees.VelociWrap">
+            <summary>
+            A class representing the Velociwrap menu item
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.VelociWrap.Price">
+            <summary>
+            How much the Veloci-Wrap costs
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.VelociWrap.Calories">
+            <summary>
+            How many calories are in the Veloci-Wrap
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.VelociWrap.Ingredients">
+            <summary>
+            A list of the ingredients that are included in the current order of the Veloci-Wrap
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.VelociWrap.#ctor">
+            <summary>
+            Creates a Veloci-Wrap object with the correct price and calories
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.VelociWrap.HoldDressing">
+            <summary>
+            allows the user to not include dressing with his/her Veloci-Wrap
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.VelociWrap.HoldLettuce">
+            <summary>
+            allows the user to not include the lettuce with his/her Veloci-Wrap
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.VelociWrap.HoldCheese">
+            <summary>
+            allows the user to not include the cheese with his/her Veloci-Wrap
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.MenuItem">
+            <summary>
+            Abstract class that represents all Menu Items
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.MenuItem.Price">
+            <summary>
+            Gets and sets the price
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.MenuItem.Calories">
+            <summary>
+            Gets and sets the calories
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.MenuItem.Ingredients">
+            <summary>
+            Gets the ingredients list
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Sides.Fryceritops">
+            <summary>
+            Class representing the Fryceritops Side menu item
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Sides.Fryceritops.Size">
+            <summary>
+            Gets and sets the size
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Sides.Fryceritops.Ingredients">
+            <summary>
+            gets the list of ingrediants
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Sides.Fryceritops.#ctor">
+            <summary>
+            Constructor for a Fryceritops Side menu item
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Sides.Size">
+            <summary>
+            Enum representing the three sizes that a side can be
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Sides.Size.Small">
+            <summary>
+            (0) represents the small Side size
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Sides.Size.Medium">
+            <summary>
+            (1) represents the medium Side size
+            </summary>
+        </member>
+        <member name="F:DinoDiner.Menu.Sides.Size.Large">
+            <summary>
+            (2) represents the Large Side size
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Sides.Side">
+            <summary>
+            Abstract class representing all Side menu items
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Sides.Side.Size">
+            <summary>
+            Gets or sets the size
+            </summary>
+        </member>
+    </members>
+</doc>
