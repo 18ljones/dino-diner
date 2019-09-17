@@ -8,21 +8,15 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// A class representing the Velociwrap menu item
+    /// </summary>
     public class VelociWrap
     {
-        /// <summary>
-        /// Whether dressing is included in the Veloci-Wrap
-        /// </summary>
         private bool dressing = true;
 
-        /// <summary>
-        /// Whether the lettuce is included in the Veloci-Wrap
-        /// </summary>
         private bool lettuce = true;
 
-        /// <summary>
-        /// Whether the cheese is included in the Veloci-Wrap
-        /// </summary>
         private bool cheese = true;
 
         /// <summary>

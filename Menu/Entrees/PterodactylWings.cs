@@ -8,6 +8,9 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// A class representing the Prerodactyl Wings menu item
+    /// </summary>
     public class PterodactylWings
     {
 

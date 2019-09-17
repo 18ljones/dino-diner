@@ -8,11 +8,11 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// A class representing the Dino Nuggets menu item
+    /// </summary>
     public class DinoNuggets
     {
-        /// <summary>
-        /// The amount of DinoNuggets included in the order
-        /// </summary>
         private uint nuggets = 6;
 
         /// <summary>

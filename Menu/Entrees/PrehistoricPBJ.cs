@@ -2,10 +2,14 @@
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// A class representing the Prehistoric PBJ menu item
+    /// </summary>
     public class PrehistoricPBJ
     {
         private bool peanutButter = true;
         private bool jelly = true;
+
 
         public double Price { get; set; }
         public uint Calories { get; set; }

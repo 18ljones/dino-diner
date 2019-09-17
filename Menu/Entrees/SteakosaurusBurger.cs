@@ -8,26 +8,17 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// A class representing the Steakosaurus Burger menu item
+    /// </summary>
     public class SteakosaurusBurger
     {
-        /// <summary>
-        /// Whether the bun is included in the Steakosaurus Burger
-        /// </summary>
         private bool bun = true;
 
-        /// <summary>
-        /// Whether the pickles are included in the Steakosaurus Burger
-        /// </summary>
         private bool pickle = true;
 
-        /// <summary>
-        /// Whether the ketchup are included in the Steakosaurus Burger
-        /// </summary>
         private bool ketchup = true;
 
-        /// <summary>
-        /// Whether the mustard are included in the Steakosaurus Burger
-        /// </summary>
         private bool mustard = true;
 
         /// <summary>

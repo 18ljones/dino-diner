@@ -8,46 +8,25 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
+    /// <summary>
+    /// A class representing the T-Rex King Burger menu item
+    /// </summary>
     public class TRexKingBurger
     {
-        /// <summary>
-        /// Whether the bun is included in the T-Rex King Burger
-        /// </summary>
         private bool bun = true;
 
-        /// <summary>
-        /// Whether the lettuce is included in the T-Rex King Burger
-        /// </summary>
         private bool lettuce = true;
 
-        /// <summary>
-        /// Whether the tomato is included in the T-Rex King Burger
-        /// </summary>
         private bool tomato = true;
 
-        /// <summary>
-        /// Whether the onion is included in the T-Rex King Burger
-        /// </summary>
         private bool onion = true;
 
-        /// <summary>
-        /// Whether the pickles are included in the T-Rex King Burger
-        /// </summary>
         private bool pickle = true;
 
-        /// <summary>
-        /// Whether the ketchup are included in the T-Rex King Burger
-        /// </summary>
         private bool ketchup = true;
 
-        /// <summary>
-        /// Whether the mustard are included in the T-Rex King Burger
-        /// </summary>
         private bool mustard = true;
 
-        /// <summary>
-        /// Whether the mayo is included in the T-Rex King Burger
-        /// </summary>
         private bool mayo = true;
 
         /// <summary>
