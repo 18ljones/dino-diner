@@ -11,24 +11,14 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// A class representing the Dino Nuggets menu item
     /// </summary>
-    public class DinoNuggets
+    public class DinoNuggets : MenuItem
     {
         private uint nuggets = 6;
 
         /// <summary>
-        /// How much the Dino Nuggets costs
-        /// </summary>
-        public double Price { get; set; }
-
-        /// <summary>
-        /// How many calories are in the Dino Nuggets
-        /// </summary>
-        public uint Calories { get; set; }
-
-        /// <summary>
         /// A list of the ingredients that are included in the current order of the Dino Nuggets
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {

@@ -24,16 +24,6 @@
             Whether the peppers are included in the Brontowurst
             </summary>
         </member>
-        <member name="P:DinoDiner.Menu.Entrees.Brontowurst.Price">
-            <summary>
-            How much the Brontowurst costs
-            </summary>
-        </member>
-        <member name="P:DinoDiner.Menu.Entrees.Brontowurst.Calories">
-            <summary>
-            How many calories are in the Brontowurst
-            </summary>
-        </member>
         <member name="P:DinoDiner.Menu.Entrees.Brontowurst.Ingredients">
             <summary>
             A list of the ingredients that are included in the current order of the Brontowurst
@@ -64,16 +54,6 @@
             A class representing the Dino Nuggets menu item
             </summary>
         </member>
-        <member name="P:DinoDiner.Menu.Entrees.DinoNuggets.Price">
-            <summary>
-            How much the Dino Nuggets costs
-            </summary>
-        </member>
-        <member name="P:DinoDiner.Menu.Entrees.DinoNuggets.Calories">
-            <summary>
-            How many calories are in the Dino Nuggets
-            </summary>
-        </member>
         <member name="P:DinoDiner.Menu.Entrees.DinoNuggets.Ingredients">
             <summary>
             A list of the ingredients that are included in the current order of the Dino Nuggets
@@ -94,19 +74,29 @@
             A class representing the Prehistoric PBJ menu item
             </summary>
         </member>
+        <member name="P:DinoDiner.Menu.Entrees.PrehistoricPBJ.Ingredients">
+            <summary>
+            gets the list of ingredients for the menu item
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.PrehistoricPBJ.#ctor">
+            <summary>
+            constructor for a Prehistoric PBJ item
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.PrehistoricPBJ.HoldPeanutButter">
+            <summary>
+            allows the customer to hold the peanutbutter
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Entrees.PrehistoricPBJ.HoldJelly">
+            <summary>
+            allows the customer to hold the jelly
+            </summary>
+        </member>
         <member name="T:DinoDiner.Menu.Entrees.PterodactylWings">
             <summary>
             A class representing the Prerodactyl Wings menu item
-            </summary>
-        </member>
-        <member name="P:DinoDiner.Menu.Entrees.PterodactylWings.Price">
-            <summary>
-            How much the Pterodactyl Wings costs
-            </summary>
-        </member>
-        <member name="P:DinoDiner.Menu.Entrees.PterodactylWings.Calories">
-            <summary>
-            How many calories are in the Pterodactyl Wings
             </summary>
         </member>
         <member name="P:DinoDiner.Menu.Entrees.PterodactylWings.Ingredients">
@@ -122,16 +112,6 @@
         <member name="T:DinoDiner.Menu.Entrees.SteakosaurusBurger">
             <summary>
             A class representing the Steakosaurus Burger menu item
-            </summary>
-        </member>
-        <member name="P:DinoDiner.Menu.Entrees.SteakosaurusBurger.Price">
-            <summary>
-            How much the Steakosaurus Burger costs
-            </summary>
-        </member>
-        <member name="P:DinoDiner.Menu.Entrees.SteakosaurusBurger.Calories">
-            <summary>
-            How many calories are in the Steakosaurus Burger
             </summary>
         </member>
         <member name="P:DinoDiner.Menu.Entrees.SteakosaurusBurger.Ingredients">
@@ -167,16 +147,6 @@
         <member name="T:DinoDiner.Menu.Entrees.TRexKingBurger">
             <summary>
             A class representing the T-Rex King Burger menu item
-            </summary>
-        </member>
-        <member name="P:DinoDiner.Menu.Entrees.TRexKingBurger.Price">
-            <summary>
-            How much the T-Rex King Burger costs
-            </summary>
-        </member>
-        <member name="P:DinoDiner.Menu.Entrees.TRexKingBurger.Calories">
-            <summary>
-            How many calories are in the T-Rex King Burger
             </summary>
         </member>
         <member name="P:DinoDiner.Menu.Entrees.TRexKingBurger.Ingredients">
@@ -232,16 +202,6 @@
         <member name="T:DinoDiner.Menu.Entrees.VelociWrap">
             <summary>
             A class representing the Velociwrap menu item
-            </summary>
-        </member>
-        <member name="P:DinoDiner.Menu.Entrees.VelociWrap.Price">
-            <summary>
-            How much the Veloci-Wrap costs
-            </summary>
-        </member>
-        <member name="P:DinoDiner.Menu.Entrees.VelociWrap.Calories">
-            <summary>
-            How many calories are in the Veloci-Wrap
             </summary>
         </member>
         <member name="P:DinoDiner.Menu.Entrees.VelociWrap.Ingredients">

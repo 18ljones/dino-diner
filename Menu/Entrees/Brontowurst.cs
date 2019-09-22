@@ -11,7 +11,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// A class representing the Brontowurst menu item
     /// </summary>
-    public class Brontowurst
+    public class Brontowurst : MenuItem
     {
         /// <summary>
         /// Whether the bun is included in the Brontowurst
@@ -29,19 +29,9 @@ namespace DinoDiner.Menu.Entrees
         private bool peppers = true;
 
         /// <summary>
-        /// How much the Brontowurst costs
-        /// </summary>
-        public double Price { get; set; }
-
-        /// <summary>
-        /// How many calories are in the Brontowurst
-        /// </summary>
-        public uint Calories { get; set; }
-
-        /// <summary>
         /// A list of the ingredients that are included in the current order of the Brontowurst
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
