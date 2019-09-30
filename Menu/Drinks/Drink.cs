@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace DinoDiner.Menu.Drinks
+{
+    /// <summary>
+    /// base class for a drink menu item
+    /// </summary>
+    public abstract class Drink : MenuItem
+    {
+        /// <summary>
+        /// gets and sets the size
+        /// </summary>
+        public abstract Size Size { get; set; }
+        /// <summary>
+        /// gets and sets whether there is ice
+        /// </summary>
+        public bool Ice { get; set; } = true;
+        /// <summary>
+        /// sets ice to false
+        /// </summary>
+        public void HoldIce()
+        {
+            Ice = false;
+        }
+    }
+
+    /// <summary>
+    /// enum for all sizes of a drink
+    /// </summary>
+    public enum Size
+    {
+        Small,
+        Medium,
+        Large
+    }
+}
