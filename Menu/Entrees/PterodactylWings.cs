@@ -11,7 +11,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// A class representing the Prerodactyl Wings menu item
     /// </summary>
-    public class PterodactylWings : MenuItem
+    public class PterodactylWings : Entree
     {
         /// <summary>
         /// A list of the ingredients that are included in the current order of the Pterodactyl Wings

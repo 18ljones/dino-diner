@@ -11,7 +11,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// A class representing the Steakosaurus Burger menu item
     /// </summary>
-    public class SteakosaurusBurger : MenuItem
+    public class SteakosaurusBurger : Entree
     {
         private bool bun = true;
 

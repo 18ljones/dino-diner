@@ -4,6 +4,11 @@
         <name>Menu</name>
     </assembly>
     <members>
+        <member name="T:DinoDiner.Menu.CretaceousCombo">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:DinoDiner.Menu.Drinks.Drink">
             <summary>
             base class for a drink menu item
@@ -267,6 +272,16 @@
         <member name="M:DinoDiner.Menu.Entrees.DinoNuggets.AddNugget">
             <summary>
             allows the user to add a nugget to their order for an extra $0.25 and updates the calories accordingly
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.Entrees.Entree">
+            <summary>
+            represents the Entree base objext
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Entrees.Entree.Ingredients">
+            <summary>
+            represents the list of ingredients
             </summary>
         </member>
         <member name="T:DinoDiner.Menu.Entrees.PrehistoricPBJ">

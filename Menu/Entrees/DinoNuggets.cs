@@ -11,7 +11,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// A class representing the Dino Nuggets menu item
     /// </summary>
-    public class DinoNuggets : MenuItem
+    public class DinoNuggets : Entree
     {
         private uint nuggets = 6;
 

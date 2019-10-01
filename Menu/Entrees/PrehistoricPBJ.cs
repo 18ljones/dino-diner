@@ -5,7 +5,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// A class representing the Prehistoric PBJ menu item
     /// </summary>
-    public class PrehistoricPBJ : MenuItem
+    public class PrehistoricPBJ : Entree
     {
         private bool peanutButter = true;
         private bool jelly = true;

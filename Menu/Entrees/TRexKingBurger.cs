@@ -11,7 +11,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// A class representing the T-Rex King Burger menu item
     /// </summary>
-    public class TRexKingBurger : MenuItem
+    public class TRexKingBurger : Entree
     {
         private bool bun = true;
 

@@ -11,7 +11,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// A class representing the Velociwrap menu item
     /// </summary>
-    public class VelociWrap : MenuItem
+    public class VelociWrap : Entree
     {
         private bool dressing = true;
 

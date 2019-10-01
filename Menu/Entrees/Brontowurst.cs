@@ -11,7 +11,7 @@ namespace DinoDiner.Menu.Entrees
     /// <summary>
     /// A class representing the Brontowurst menu item
     /// </summary>
-    public class Brontowurst : MenuItem
+    public class Brontowurst : Entree
     {
         /// <summary>
         /// Whether the bun is included in the Brontowurst
