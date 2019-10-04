@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// base class for a drink menu item
@@ -24,15 +24,5 @@ namespace DinoDiner.Menu.Drinks
         {
             Ice = false;
         }
-    }
-
-    /// <summary>
-    /// enum for all sizes of a drink
-    /// </summary>
-    public enum Size
-    {
-        Small,
-        Medium,
-        Large
     }
 }

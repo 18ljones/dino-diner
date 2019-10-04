@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// A class representing the T-Rex King Burger menu item
@@ -47,6 +47,15 @@ namespace DinoDiner.Menu.Entrees
                 if (mayo) ingredients.Add("Mayo");
                 return ingredients;
             }
+        }
+
+        /// <summary>
+        /// returns the name of the menu item
+        /// </summary>
+        /// <returns>the name of the menu item</returns>
+        public override string ToString()
+        {
+            return "T-Rex King Burger";
         }
 
         /// <summary>

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// A class representing the Prehistoric PBJ menu item
@@ -22,6 +22,15 @@ namespace DinoDiner.Menu.Entrees
                 if (jelly) ingredients.Add("Jelly");
                 return ingredients;
             }
+        }
+
+        /// <summary>
+        /// returns the name of the menu item
+        /// </summary>
+        /// <returns>the name of the menu item</returns>
+        public override string ToString()
+        {
+            return "Prehistoric PB&J";
         }
 
         /// <summary>

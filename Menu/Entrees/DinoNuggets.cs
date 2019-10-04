@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// A class representing the Dino Nuggets menu item
@@ -29,6 +29,15 @@ namespace DinoDiner.Menu.Entrees
                 }
                 return ingredients;
             }
+        }
+
+        /// <summary>
+        /// returns the name of the menu item
+        /// </summary>
+        /// <returns>the name of the menu item</returns>
+        public override string ToString()
+        {
+            return "Dino-Nuggets";
         }
 
         /// <summary>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// represents a Sodasaurs drink object
@@ -32,6 +32,15 @@ namespace DinoDiner.Menu.Drinks
                 List<string> ingredients = new List<String>() { "Water", "Natural Flavors", "Cane Sugar" };
                 return ingredients;
             }
+        }
+
+        /// <summary>
+        /// returns the name of the menu item
+        /// </summary>
+        /// <returns>the name of the menu item</returns>
+        public override string ToString()
+        {
+            return Size.ToString() + " " + Flavor.ToString() + " Sodasaurus";
         }
 
         /// <summary>

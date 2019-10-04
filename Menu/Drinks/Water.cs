@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// public class for Water
@@ -58,6 +58,15 @@ namespace DinoDiner.Menu.Drinks
                 if (Lemon) ingredients.Add("Lemon");
                 return ingredients;
             }
+        }
+
+        /// <summary>
+        /// returns the name of the menu item
+        /// </summary>
+        /// <returns>the name of the menu item</returns>
+        public override string ToString()
+        {
+            return Size.ToString() + " Water";
         }
     }
 }

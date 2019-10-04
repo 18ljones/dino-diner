@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// A class representing the Prerodactyl Wings menu item
@@ -23,6 +23,15 @@ namespace DinoDiner.Menu.Entrees
                 List<string> ingredients = new List<string>() {"Chicken", "Wing Sauce" };
                 return ingredients;
             }
+        }
+
+        /// <summary>
+        /// returns the name of the menu item
+        /// </summary>
+        /// <returns>the name of the menu item</returns>
+        public override string ToString()
+        {
+            return "Pterodactyl Wings";
         }
 
         /// <summary>

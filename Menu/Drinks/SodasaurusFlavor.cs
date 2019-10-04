@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// represents the possible flavors for a sodasaurus
@@ -28,7 +28,7 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// rootbeer flavor
         /// </summary>
-        Rootbeer,
+        RootBeer,
         /// <summary>
         /// cherry flavor
         /// </summary>

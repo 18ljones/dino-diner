@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     /// <summary>
     /// class for Tyrannotea
@@ -95,6 +95,16 @@ namespace DinoDiner.Menu.Drinks
                 if (Sweet) ingredients.Add("Cane Sugar");
                 return ingredients;
             }
+        }
+
+        /// <summary>
+        /// returns the name of the menu item
+        /// </summary>
+        /// <returns>the name of the menu item</returns>
+        public override string ToString()
+        {
+            if(Sweet) return Size.ToString() + " Sweet Tyrannotea";
+            else return Size.ToString() + " Tyrannotea";
         }
 
         /// <summary>

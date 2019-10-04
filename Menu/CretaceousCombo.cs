@@ -1,7 +1,4 @@
-﻿using DinoDiner.Menu.Drinks;
-using DinoDiner.Menu.Entrees;
-using DinoDiner.Menu.Sides;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,7 +7,7 @@ namespace DinoDiner.Menu
     /// <summary>
     /// class representing a Combo
     /// </summary>
-    public class CretaceousCombo
+    public class CretaceousCombo : MenuItem
     {
         /// <summary>
         /// represents the Entree in the combo
@@ -35,7 +32,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// repsents the total cost of the combo
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -46,7 +43,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// represents the total calories in the combo
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -57,7 +54,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// represents all the ingredients used to make this combo
         /// </summary>
-        public List<string> Ingredients
+        public override List<string> Ingredients
         {
             get
             {
@@ -67,6 +64,15 @@ namespace DinoDiner.Menu
                 ingredients.AddRange(Drink.Ingredients);
                 return ingredients;
             }
+        }
+
+        /// <summary>
+        /// returns the name of the menu item
+        /// </summary>
+        /// <returns>the name of the menu item</returns>
+        public override string ToString()
+        {
+            return Entree.ToString() + " Combo";
         }
 
         /// <summary>

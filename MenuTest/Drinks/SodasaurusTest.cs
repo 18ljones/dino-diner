@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
-using DinoDiner.Menu.Drinks;
+using DinoDiner.Menu;
 
 namespace DinoDiner.MenuTest.Drinks
 {
@@ -141,8 +141,8 @@ namespace DinoDiner.MenuTest.Drinks
         public void ShouldSetFlavorRootBeer()
         {
             Sodasaurus soda = new Sodasaurus();
-            soda.Flavor = SodasaurusFlavor.Rootbeer;
-            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.Rootbeer, soda.Flavor);
+            soda.Flavor = SodasaurusFlavor.RootBeer;
+            Assert.Equal<SodasaurusFlavor>(SodasaurusFlavor.RootBeer, soda.Flavor);
         }
         [Fact]
         public void ShouldSetFlavorCherry()
