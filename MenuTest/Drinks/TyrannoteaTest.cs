@@ -180,12 +180,36 @@ namespace MenuTest.Drinks
         public void ShouldListIngredients()
         {
             Tyrannotea t = new Tyrannotea();
-            t.Sweet = true;
-            t.AddLemon();
             List<string> ingredients = t.Ingredients;
             Assert.Contains<string>("Water", ingredients);
             Assert.Contains<string>("Tea", ingredients);
             Assert.Contains<string>("Cane Sugar", ingredients);
+            Assert.Contains<string>("Lemon", ingredients);
+            Assert.Equal<int>(4, ingredients.Count);
+        }
+
+        // correct ingredients after Sweet is added
+        [Fact]
+        public void ShouldListIngredientsSweet()
+        {
+            Tyrannotea t = new Tyrannotea();
+            List<string> ingredients = t.Ingredients;
+            t.Sweet = true;
+            Assert.Contains<string>("Water", ingredients);
+            Assert.Contains<string>("Tea", ingredients);
+            Assert.Contains<string>("Cane Sugar", ingredients);
+            Assert.Equal<int>(4, ingredients.Count);
+        }
+
+        // correct ingredients after lemon is added
+        [Fact]
+        public void ShouldListIngredientsLemon()
+        {
+            Tyrannotea t = new Tyrannotea();
+            List<string> ingredients = t.Ingredients;
+            t.AddLemon();
+            Assert.Contains<string>("Water", ingredients);
+            Assert.Contains<string>("Tea", ingredients);
             Assert.Contains<string>("Lemon", ingredients);
             Assert.Equal<int>(4, ingredients.Count);
         }
