@@ -1,0 +1,54 @@
+﻿<Page x:Class="PointOfSale.CustomizeCombo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointOfSale"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CustomizeCombo">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Margin="2" HorizontalAlignment="Stretch" VerticalAlignment="Top" TextAlignment="Center" Grid.ColumnSpan="2">Add To Order</TextBlock>
+        <TextBlock Margin ="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" TextAlignment="Center" Grid.ColumnSpan="2">Customize Combo</TextBlock>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center">Side</TextBlock>
+            <Button Grid.Column="0" Margin="25" Click="ButtonClickComboSideSelection">
+                <TextBlock>Friceritops</TextBlock>
+            </Button>
+            <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center">Drink</TextBlock>
+            <Button Grid.Column="1" Margin="25" Click="ButtonClickComboDrinkSelection">
+                <TextBlock>Sodasaurus</TextBlock>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0.93*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.ColumnSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center">Side</TextBlock>
+            <Button Grid.Column="0" Margin="25, 25, 0, 25" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ButtonClickSize">
+                <TextBlock>Small</TextBlock>
+            </Button>
+            <Button Grid.Column="1" Margin="0, 25, 0, 25" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ButtonClickSize">
+                <TextBlock>Medium</TextBlock>
+            </Button>
+            <Button Grid.Column="2" Margin="0, 25, 25, 25" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ButtonClickSize">
+                <TextBlock>Large</TextBlock>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>
