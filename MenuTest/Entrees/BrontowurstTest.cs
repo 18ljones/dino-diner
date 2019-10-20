@@ -1,6 +1,9 @@
+/*  BrontowurstText.cs
+ *  Author: Logan Jones
+ */
 using System.Collections.Generic;
 using Xunit;
-using DinoDiner.Menu.Entrees;
+using DinoDiner.Menu;
 
 namespace MenuTest.Entrees
 {
@@ -54,6 +57,19 @@ namespace MenuTest.Entrees
             Brontowurst bw = new Brontowurst();
             bw.HoldOnion();
             Assert.DoesNotContain<string>("Onion", bw.Ingredients);
+        }
+
+        [Fact]
+        public void ShouldHaveEmptySpecialByDefault()
+        {
+            Brontowurst bw = new Brontowurst();
+            Assert.Empty(bw.Special);
+        }
+
+        [Fact]
+        public void ShouldHaveCorrectDescription()
+        {
+            Brontowurst bw = new Brontowurst();
         }
     }
 

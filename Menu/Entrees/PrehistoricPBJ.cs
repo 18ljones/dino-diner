@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -11,6 +12,11 @@ namespace DinoDiner.Menu
         private bool jelly = true;
 
         /// <summary>
+        /// property changed event handler
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>
         /// gets the list of ingredients for the menu item
         /// </summary>
         public override List<string> Ingredients
@@ -21,6 +27,31 @@ namespace DinoDiner.Menu
                 if (peanutButter) ingredients.Add("Peanut Butter");
                 if (jelly) ingredients.Add("Jelly");
                 return ingredients;
+            }
+        }
+
+        /// <summary>
+        /// describes the special conditions for a Prehistoric PBJ
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!peanutButter) special.Add("Hold Peanut Butter");
+                if (!jelly) special.Add("Hold Jelly");
+                return special.ToArray();
+            }
+        }
+
+        /// <summary>
+        /// gets the description for a PBJ item
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
             }
         }
 
@@ -48,6 +79,8 @@ namespace DinoDiner.Menu
         public void HoldPeanutButter()
         {
             this.peanutButter = false;
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Ingredients");
         }
 
         /// <summary>
@@ -56,6 +89,17 @@ namespace DinoDiner.Menu
         public void HoldJelly()
         {
             this.jelly = false;
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Ingredients");
+        }
+
+        /// <summary>
+        /// Checks if properties have changed
+        /// </summary>
+        /// <param name="propertyName">name of the property</param>
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

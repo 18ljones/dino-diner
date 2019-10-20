@@ -1,5 +1,9 @@
-﻿using System;
+﻿/*  CretaceousCombo.cs
+ *  Author: Logan Jones
+ */
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -9,23 +13,69 @@ namespace DinoDiner.Menu
     /// </summary>
     public class CretaceousCombo : MenuItem
     {
+        private Entree entree;
+        private Drink drink = new Sodasaurus();
+        private Side side = new Fryceritops();
+
+        /// <summary>
+        /// property changed event handler
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// represents the Entree in the combo
         /// </summary>
-        public Entree Entree { get; set; }
+        public Entree Entree
+        {
+            get
+            {
+                return entree;
+            }
+            set
+            {
+                entree = value;
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Special");
+            }
+        }
 
         /// <summary>
         /// represents the Drink in the combo
         /// </summary>
-        public Drink Drink { get; set; } = new Sodasaurus();
+        public Drink Drink
+        {
+            get
+            {
+                return drink;
+            }
+            set
+            {
+                drink = value;
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Special");
+            }
+        }
 
         /// <summary>
         /// represents the Side in the combo
         /// </summary>
-        public Side Side { get; set; } = new Fryceritops();
+        public Side Side
+        {
+            get
+            {
+                return side;
+            }
+            set
+            {
+                side = value;
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Special");
+            }
+        }
 
         /// <summary>
-        /// represnets the toy in the combo
+        /// represents the toy in the combo
         /// </summary>
         public string Toy { get; private set; }
 
@@ -67,6 +117,35 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// returns the description of this menu item
+        /// </summary>
+        /// <returns>the description</returns>
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// returns the specials of this combo
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                special.AddRange(Entree.Special);
+                special.Add(Side.ToString());
+                special.AddRange(Side.Special);
+                special.Add(Drink.ToString());
+                special.AddRange(Drink.Special);
+                return special.ToArray();
+            }
+        }
+
+        /// <summary>
         /// returns the name of the menu item
         /// </summary>
         /// <returns>the name of the menu item</returns>
@@ -83,6 +162,15 @@ namespace DinoDiner.Menu
         {
             this.Entree = entree;
             this.Toy = "PS4";
+        }
+
+        /// <summary>
+        /// Checks if properties have changed
+        /// </summary>
+        /// <param name="propertyName">name of the property</param>
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

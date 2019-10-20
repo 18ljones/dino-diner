@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DinoDiner.Menu
@@ -10,6 +11,11 @@ namespace DinoDiner.Menu
     public class JurassicJava : Drink
     {
         private Size size;
+
+        /// <summary>
+        /// property changed event handler
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// specifies whether the is room for cream
         /// </summary>
@@ -45,14 +51,23 @@ namespace DinoDiner.Menu
                     case Size.Small:
                         Price = 0.59;
                         Calories = 2;
+                        NotifyOfPropertyChanged("Price");
+                        NotifyOfPropertyChanged("Calories");
+                        NotifyOfPropertyChanged("Description");
                         break;
                     case Size.Medium:
                         Price = 0.99;
                         Calories = 4;
+                        NotifyOfPropertyChanged("Price");
+                        NotifyOfPropertyChanged("Calories");
+                        NotifyOfPropertyChanged("Description");
                         break;
                     case Size.Large:
                         Price = 1.49;
                         Calories = 8;
+                        NotifyOfPropertyChanged("Price");
+                        NotifyOfPropertyChanged("Calories");
+                        NotifyOfPropertyChanged("Description");
                         break;
                 }
             }
@@ -67,6 +82,32 @@ namespace DinoDiner.Menu
             {
                 List<string> ingredients = new List<string>() { "Water", "Coffee" };
                 return ingredients;
+            }
+        }
+
+        /// <summary>
+        /// returns the description of this menu item
+        /// </summary>
+        /// <returns>the description</returns>
+        public override string Description
+        {
+            get
+            {
+                return this.ToString();
+            }
+        }
+
+        /// <summary>
+        /// returns special things about this menu item
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (RoomForCream) special.Add("Leave Room For Cream");
+                if (Ice) special.Add("Add Ice");
+                return special.ToArray();
             }
         }
 
@@ -87,13 +128,23 @@ namespace DinoDiner.Menu
         public void LeaveRoomForCream()
         {
             RoomForCream = true;
-        }
+            NotifyOfPropertyChanged("Special");        }
         /// <summary>
         /// adds ice
         /// </summary>
         public void AddIce()
         {
             Ice = true;
+            NotifyOfPropertyChanged("Special");
+        }
+
+        /// <summary>
+        /// Checks if properties have changed
+        /// </summary>
+        /// <param name="propertyName">name of the property</param>
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
