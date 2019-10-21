@@ -13,11 +13,6 @@ namespace DinoDiner.Menu
         private Size size;
 
         /// <summary>
-        /// property changed event handler
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
         /// Gets and sets the size
         /// </summary>
         public override Size Size
@@ -107,15 +102,6 @@ namespace DinoDiner.Menu
         {
             base.Calories = 420;
             base.Price = 0.99;
-        }
-
-        /// <summary>
-        /// Checks if properties have changed
-        /// </summary>
-        /// <param name="propertyName">name of the property</param>
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

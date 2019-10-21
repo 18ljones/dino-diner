@@ -17,11 +17,6 @@ namespace DinoDiner.Menu
         private uint nuggets = 6;
 
         /// <summary>
-        /// property changed event handler
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
         /// A list of the ingredients that are included in the current order of the Dino Nuggets
         /// </summary>
         public override List<string> Ingredients
@@ -29,7 +24,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> ingredients = new List<string>();
-                for(int i = 0; i < nuggets; i++)
+                for (int i = 0; i < nuggets; i++)
                 {
                     ingredients.Add("Chicken Nugget");
                 }
@@ -46,7 +41,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                if(nuggets > 6)
+                if (nuggets > 6)
                 {
                     special.Add($"{nuggets - 6} Extra Nuggets");
                 }
@@ -96,15 +91,6 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChanged("Calories");
             NotifyOfPropertyChanged("Special");
             NotifyOfPropertyChanged("Ingredients");
-        }
-
-        /// <summary>
-        /// Checks if properties have changed
-        /// </summary>
-        /// <param name="propertyName">name of the property</param>
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

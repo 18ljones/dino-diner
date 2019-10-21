@@ -59,18 +59,8 @@ namespace MenuTest.Entrees
             Assert.DoesNotContain<string>("Onion", bw.Ingredients);
         }
 
-        [Fact]
-        public void ShouldHaveEmptySpecialByDefault()
-        {
-            Brontowurst bw = new Brontowurst();
-            Assert.Empty(bw.Special);
-        }
+        
 
-        [Fact]
-        public void ShouldHaveCorrectDescription()
-        {
-            Brontowurst bw = new Brontowurst();
-        }
     }
 
 }

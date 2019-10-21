@@ -18,11 +18,6 @@ namespace DinoDiner.Menu
         private Side side = new Fryceritops();
 
         /// <summary>
-        /// property changed event handler
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
         /// represents the Entree in the combo
         /// </summary>
         public Entree Entree
@@ -162,15 +157,6 @@ namespace DinoDiner.Menu
         {
             this.Entree = entree;
             this.Toy = "PS4";
-        }
-
-        /// <summary>
-        /// Checks if properties have changed
-        /// </summary>
-        /// <param name="propertyName">name of the property</param>
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

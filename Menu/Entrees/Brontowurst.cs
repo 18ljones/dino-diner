@@ -30,11 +30,6 @@ namespace DinoDiner.Menu
         private bool peppers = true;
 
         /// <summary>
-        /// property changed event handler
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
         /// A list of the ingredients that are included in the current order of the Brontowurst
         /// </summary>
         public override List<string> Ingredients
@@ -122,15 +117,6 @@ namespace DinoDiner.Menu
             this.onions = false;
             NotifyOfPropertyChanged("Special");
             NotifyOfPropertyChanged("Ingredients");
-        }
-
-        /// <summary>
-        /// Checks if properties have changed
-        /// </summary>
-        /// <param name="propertyName">name of the property</param>
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

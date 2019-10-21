@@ -30,10 +30,6 @@ namespace DinoDiner.Menu
 
         private bool mayo = true;
 
-        /// <summary>
-        /// property changed event handler
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// A list of the ingredients that are included in the current order of the T-Rex King Burger
@@ -183,15 +179,6 @@ namespace DinoDiner.Menu
             this.mayo = false;
             NotifyOfPropertyChanged("Special");
             NotifyOfPropertyChanged("Ingredients");
-        }
-
-        /// <summary>
-        /// Checks if properties have changed
-        /// </summary>
-        /// <param name="propertyName">name of the property</param>
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

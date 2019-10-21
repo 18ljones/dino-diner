@@ -12,11 +12,6 @@ namespace DinoDiner.Menu
         private bool jelly = true;
 
         /// <summary>
-        /// property changed event handler
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
         /// gets the list of ingredients for the menu item
         /// </summary>
         public override List<string> Ingredients
@@ -93,13 +88,5 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChanged("Ingredients");
         }
 
-        /// <summary>
-        /// Checks if properties have changed
-        /// </summary>
-        /// <param name="propertyName">name of the property</param>
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

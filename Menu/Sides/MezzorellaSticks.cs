@@ -13,11 +13,6 @@ namespace DinoDiner.Menu
         private Size size;
 
         /// <summary>
-        /// property changed event handler
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
         /// Gets and sets the size
         /// </summary>
         public override Size Size
@@ -33,26 +28,20 @@ namespace DinoDiner.Menu
                 {
                     case Size.Small:
                         Price = 0.99;
-                        Calories = 540;
-                        NotifyOfPropertyChanged("Price");
-                        NotifyOfPropertyChanged("Calories");
-                        NotifyOfPropertyChanged("Description");
+                        Calories = 540;                       
                         break;
                     case Size.Medium:
                         Price = 1.45;
                         Calories = 610;
-                        NotifyOfPropertyChanged("Price");
-                        NotifyOfPropertyChanged("Calories");
-                        NotifyOfPropertyChanged("Description");
                         break;
                     case Size.Large:
                         Price = 1.95;
                         Calories = 720;
-                        NotifyOfPropertyChanged("Price");
-                        NotifyOfPropertyChanged("Calories");
-                        NotifyOfPropertyChanged("Description");
                         break;
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
             }
         }
 
@@ -107,15 +96,6 @@ namespace DinoDiner.Menu
         {
             base.Calories = 540;
             base.Price = 0.99;
-        }
-
-        /// <summary>
-        /// Checks if properties have changed
-        /// </summary>
-        /// <param name="propertyName">name of the property</param>
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

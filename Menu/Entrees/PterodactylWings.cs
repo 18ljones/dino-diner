@@ -14,10 +14,6 @@ namespace DinoDiner.Menu
     /// </summary>
     public class PterodactylWings : Entree
     {
-        /// <summary>
-        /// property changed event handler
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// A list of the ingredients that are included in the current order of the Pterodactyl Wings
@@ -69,15 +65,6 @@ namespace DinoDiner.Menu
         {
             this.Price = 7.21;
             this.Calories = 318;
-        }
-
-        /// <summary>
-        /// Checks if properties have changed
-        /// </summary>
-        /// <param name="propertyName">name of the property</param>
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

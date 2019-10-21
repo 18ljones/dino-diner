@@ -26,7 +26,7 @@
         </member>
         <member name="P:DinoDiner.Menu.CretaceousCombo.Toy">
             <summary>
-            represnets the toy in the combo
+            represents the toy in the combo
             </summary>
         </member>
         <member name="P:DinoDiner.Menu.CretaceousCombo.Price">
@@ -42,6 +42,17 @@
         <member name="P:DinoDiner.Menu.CretaceousCombo.Ingredients">
             <summary>
             represents all the ingredients used to make this combo
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.CretaceousCombo.Description">
+            <summary>
+            returns the description of this menu item
+            </summary>
+            <returns>the description</returns>
+        </member>
+        <member name="P:DinoDiner.Menu.CretaceousCombo.Special">
+            <summary>
+            returns the specials of this combo
             </summary>
         </member>
         <member name="M:DinoDiner.Menu.CretaceousCombo.ToString">
@@ -106,6 +117,17 @@
             returns the ingredients
             </summary>
         </member>
+        <member name="P:DinoDiner.Menu.JurassicJava.Description">
+            <summary>
+            returns the description of this menu item
+            </summary>
+            <returns>the description</returns>
+        </member>
+        <member name="P:DinoDiner.Menu.JurassicJava.Special">
+            <summary>
+            returns special things about this menu item
+            </summary>
+        </member>
         <member name="M:DinoDiner.Menu.JurassicJava.ToString">
             <summary>
             returns the name of the menu item
@@ -140,6 +162,17 @@
         <member name="P:DinoDiner.Menu.Sodasaurus.Ingredients">
             <summary>
             returns the ingredients of sodasaurs
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Sodasaurus.Description">
+            <summary>
+            returns the description of this menu item
+            </summary>
+            <returns>the description</returns>
+        </member>
+        <member name="P:DinoDiner.Menu.Sodasaurus.Special">
+            <summary>
+            returns special things about this menu item
             </summary>
         </member>
         <member name="M:DinoDiner.Menu.Sodasaurus.ToString">
@@ -223,6 +256,17 @@
             returns the list of ingredients
             </summary>
         </member>
+        <member name="P:DinoDiner.Menu.Tyrannotea.Description">
+            <summary>
+            returns the description of this menu item
+            </summary>
+            <returns>the description</returns>
+        </member>
+        <member name="P:DinoDiner.Menu.Tyrannotea.Special">
+            <summary>
+            returns special things about this menu item
+            </summary>
+        </member>
         <member name="M:DinoDiner.Menu.Tyrannotea.ToString">
             <summary>
             returns the name of the menu item
@@ -269,6 +313,17 @@
             returns the ingredients
             </summary>
         </member>
+        <member name="P:DinoDiner.Menu.Water.Description">
+            <summary>
+            returns the description of this menu item
+            </summary>
+            <returns>the description</returns>
+        </member>
+        <member name="P:DinoDiner.Menu.Water.Special">
+            <summary>
+            returns special things about this menu item
+            </summary>
+        </member>
         <member name="M:DinoDiner.Menu.Water.ToString">
             <summary>
             returns the name of the menu item
@@ -298,6 +353,17 @@
         <member name="P:DinoDiner.Menu.Brontowurst.Ingredients">
             <summary>
             A list of the ingredients that are included in the current order of the Brontowurst
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Brontowurst.Description">
+            <summary>
+            returns the description of this menu item
+            </summary>
+            <returns>the description</returns>
+        </member>
+        <member name="P:DinoDiner.Menu.Brontowurst.Special">
+            <summary>
+            returns special things about this menu item
             </summary>
         </member>
         <member name="M:DinoDiner.Menu.Brontowurst.ToString">
@@ -336,6 +402,17 @@
             A list of the ingredients that are included in the current order of the Dino Nuggets
             </summary>
         </member>
+        <member name="P:DinoDiner.Menu.DinoNuggets.Special">
+            <summary>
+            returns special things about this order of dino nuggets
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.DinoNuggets.Description">
+            <summary>
+            returns the description of a dino nugget item
+            </summary>
+            <returns>the description</returns>
+        </member>
         <member name="M:DinoDiner.Menu.DinoNuggets.ToString">
             <summary>
             returns the name of the menu item
@@ -372,6 +449,16 @@
             gets the list of ingredients for the menu item
             </summary>
         </member>
+        <member name="P:DinoDiner.Menu.PrehistoricPBJ.Special">
+            <summary>
+            describes the special conditions for a Prehistoric PBJ
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.PrehistoricPBJ.Description">
+            <summary>
+            gets the description for a PBJ item
+            </summary>
+        </member>
         <member name="M:DinoDiner.Menu.PrehistoricPBJ.ToString">
             <summary>
             returns the name of the menu item
@@ -403,6 +490,16 @@
             A list of the ingredients that are included in the current order of the Pterodactyl Wings
             </summary>
         </member>
+        <member name="P:DinoDiner.Menu.PterodactylWings.Description">
+            <summary>
+            gets the description of this item
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.PterodactylWings.Special">
+            <summary>
+            returns special things about this order item
+            </summary>
+        </member>
         <member name="M:DinoDiner.Menu.PterodactylWings.ToString">
             <summary>
             returns the name of the menu item
@@ -422,6 +519,17 @@
         <member name="P:DinoDiner.Menu.SteakosaurusBurger.Ingredients">
             <summary>
             A list of the ingredients that are included in the current order of the Steakosaurus Burger
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.SteakosaurusBurger.Description">
+            <summary>
+            returns the description of this menu item
+            </summary>
+            <returns>the description</returns>
+        </member>
+        <member name="P:DinoDiner.Menu.SteakosaurusBurger.Special">
+            <summary>
+            returns special things about this menu item
             </summary>
         </member>
         <member name="M:DinoDiner.Menu.SteakosaurusBurger.ToString">
@@ -463,6 +571,17 @@
         <member name="P:DinoDiner.Menu.TRexKingBurger.Ingredients">
             <summary>
             A list of the ingredients that are included in the current order of the T-Rex King Burger
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.TRexKingBurger.Description">
+            <summary>
+            returns the description of this menu item
+            </summary>
+            <returns>the description</returns>
+        </member>
+        <member name="P:DinoDiner.Menu.TRexKingBurger.Special">
+            <summary>
+            returns special things about this menu item
             </summary>
         </member>
         <member name="M:DinoDiner.Menu.TRexKingBurger.ToString">
@@ -526,6 +645,17 @@
             A list of the ingredients that are included in the current order of the Veloci-Wrap
             </summary>
         </member>
+        <member name="P:DinoDiner.Menu.VelociWrap.Description">
+            <summary>
+            returns the description of this menu item
+            </summary>
+            <returns>the description</returns>
+        </member>
+        <member name="P:DinoDiner.Menu.VelociWrap.Special">
+            <summary>
+            returns special things about this menu item
+            </summary>
+        </member>
         <member name="M:DinoDiner.Menu.VelociWrap.ToString">
             <summary>
             returns the name of the menu item
@@ -550,6 +680,26 @@
         <member name="M:DinoDiner.Menu.VelociWrap.HoldCheese">
             <summary>
             allows the user to not include the cheese with his/her Veloci-Wrap
+            </summary>
+        </member>
+        <member name="T:DinoDiner.Menu.IOrderItem">
+            <summary>
+            specifies 3 methods that are used by an order item
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.IOrderItem.Price">
+            <summary>
+            gets the price of the order item
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.IOrderItem.Description">
+            <summary>
+            gets the description of an order item
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.IOrderItem.Special">
+            <summary>
+            gets the special conditions for this order item
             </summary>
         </member>
         <member name="T:DinoDiner.Menu.Menu">
@@ -577,6 +727,12 @@
             returns a list of the available drinks
             </summary>
         </member>
+        <member name="M:DinoDiner.Menu.Menu.ToString">
+            <summary>
+            returns the whole menu in string format
+            </summary>
+            <returns>the whole menu in string format</returns>
+        </member>
         <member name="T:DinoDiner.Menu.MenuItem">
             <summary>
             Abstract class that represents all Menu Items
@@ -597,6 +753,57 @@
             Gets the ingredients list
             </summary>
         </member>
+        <member name="P:DinoDiner.Menu.MenuItem.Description">
+            <summary>
+            gets the description of the item
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.MenuItem.Special">
+            <summary>
+            gets the special condtions for the item
+            </summary>
+        </member>
+        <member name="E:DinoDiner.Menu.MenuItem.PropertyChanged">
+            <summary>
+            event handler for property changed
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.MenuItem.NotifyOfPropertyChanged(System.String)">
+            <summary>
+            Checks if properties have changed
+            </summary>
+            <param name="propertyName">name of the property</param>
+        </member>
+        <member name="T:DinoDiner.Menu.Order">
+            <summary>
+            Class for an order object
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Order.Items">
+            <summary>
+            gets and sets the list of items in the order
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Order.SubtotalCost">
+            <summary>
+            gets and sets the subtotal cost
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Order.SalesTaxRate">
+            <summary>
+            gets and sets the sales tax rate
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Order.SalesTaxCost">
+            <summary>
+            gets and sets the sales tax cost
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Order.TotalCost">
+            <summary>
+            gets and sets the total cost
+            </summary>
+        </member>
         <member name="T:DinoDiner.Menu.Fryceritops">
             <summary>
             Class representing the Fryceritops Side menu item
@@ -610,6 +817,17 @@
         <member name="P:DinoDiner.Menu.Fryceritops.Ingredients">
             <summary>
             gets the list of ingrediants
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Fryceritops.Description">
+            <summary>
+            returns the description of this menu item
+            </summary>
+            <returns>the description</returns>
+        </member>
+        <member name="P:DinoDiner.Menu.Fryceritops.Special">
+            <summary>
+            returns special things about this menu item
             </summary>
         </member>
         <member name="M:DinoDiner.Menu.Fryceritops.ToString">
@@ -638,6 +856,17 @@
             gets the list of ingrediants
             </summary>
         </member>
+        <member name="P:DinoDiner.Menu.MeteorMacAndCheese.Description">
+            <summary>
+            returns the description of this menu item
+            </summary>
+            <returns>the description</returns>
+        </member>
+        <member name="P:DinoDiner.Menu.MeteorMacAndCheese.Special">
+            <summary>
+            returns special things about this menu item
+            </summary>
+        </member>
         <member name="M:DinoDiner.Menu.MeteorMacAndCheese.ToString">
             <summary>
             returns the name of the menu item
@@ -662,6 +891,17 @@
         <member name="P:DinoDiner.Menu.MezzorellaSticks.Ingredients">
             <summary>
             gets the list of ingrediants
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.MezzorellaSticks.Description">
+            <summary>
+            returns the description of this menu item
+            </summary>
+            <returns>the description</returns>
+        </member>
+        <member name="P:DinoDiner.Menu.MezzorellaSticks.Special">
+            <summary>
+            returns special things about this menu item
             </summary>
         </member>
         <member name="M:DinoDiner.Menu.MezzorellaSticks.ToString">
@@ -718,6 +958,17 @@
         <member name="P:DinoDiner.Menu.Triceritots.Ingredients">
             <summary>
             gets the list of ingrediants
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Triceritots.Description">
+            <summary>
+            returns the description of this menu item
+            </summary>
+            <returns>the description</returns>
+        </member>
+        <member name="P:DinoDiner.Menu.Triceritots.Special">
+            <summary>
+            returns special things about this menu item
             </summary>
         </member>
         <member name="M:DinoDiner.Menu.Triceritots.ToString">

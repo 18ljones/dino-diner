@@ -20,11 +20,6 @@ namespace DinoDiner.Menu
         public bool Ice { get; set; } = true;
 
         /// <summary>
-        /// property changed event handler
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
         /// sets ice to false
         /// </summary>
         public void HoldIce()
@@ -32,15 +27,6 @@ namespace DinoDiner.Menu
             Ice = false;
             NotifyOfPropertyChanged("Special");
             NotifyOfPropertyChanged("Ice");
-        }
-
-        /// <summary>
-        /// Checks if properties have changed
-        /// </summary>
-        /// <param name="propertyName">name of the property</param>
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

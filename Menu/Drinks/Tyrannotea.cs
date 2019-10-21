@@ -12,11 +12,7 @@ namespace DinoDiner.Menu
     {
         private Size size;
         private bool sweet;
-
-        /// <summary>
-        /// property changed event handler
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        private bool lemon;
 
         /// <summary>
         /// specifies whether it is sweet or not
@@ -36,23 +32,33 @@ namespace DinoDiner.Menu
                         if (Size == Size.Small) Calories = 16;
                         else if (Size == Size.Medium) Calories = 32;
                         else Calories = 64;
-                        NotifyOfPropertyChanged("Price");
-                        NotifyOfPropertyChanged("Calories");
                         break;
                     case false:
                         if (Size == Size.Small) Calories = 8;
                         else if (Size == Size.Medium) Calories = 16;
                         else Calories = 32;
-                        NotifyOfPropertyChanged("Price");
-                        NotifyOfPropertyChanged("Calories");
                         break;
                 }
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
             }
         }
         /// <summary>
         /// specifies whether there is lemon or not
         /// </summary>
-        public bool Lemon { get; set; }
+        public bool Lemon 
+        {
+            get
+            {
+                return lemon;
+            }
+            set 
+            {
+                lemon = value;
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Ingredients");
+            }
+        }
 
         /// <summary>
         /// default constructor for Tyrannotea
@@ -80,27 +86,21 @@ namespace DinoDiner.Menu
                         Price = 0.99;
                         if (Sweet) Calories = 16;
                         else Calories = 8;
-                        NotifyOfPropertyChanged("Price");
-                        NotifyOfPropertyChanged("Calories");
-                        NotifyOfPropertyChanged("Description");
                         break;
                     case Size.Medium:
                         Price = 1.49;
                         if (Sweet) Calories = 32;
                         else Calories = 16;
-                        NotifyOfPropertyChanged("Price");
-                        NotifyOfPropertyChanged("Calories");
-                        NotifyOfPropertyChanged("Description");
                         break;
                     case Size.Large:
                         Price = 1.99;
                         if (Sweet) Calories = 64;
                         else Calories = 32;
-                        NotifyOfPropertyChanged("Price");
-                        NotifyOfPropertyChanged("Calories");
-                        NotifyOfPropertyChanged("Description");
                         break;
                 }
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
             }
         }
         /// <summary>
@@ -138,6 +138,7 @@ namespace DinoDiner.Menu
             {
                 List<string> special = new List<string>();
                 if (Lemon) special.Add("Add Lemon");
+                if (!Ice) special.Add("Hold Ice");
                 return special.ToArray();
             }
         }
@@ -158,8 +159,6 @@ namespace DinoDiner.Menu
         public void AddLemon()
         {
             Lemon = true;
-            NotifyOfPropertyChanged("Special");
-            NotifyOfPropertyChanged("Ingredients");
         }
         /// <summary>
         /// updates the calories when sweetener is added or removed
@@ -167,15 +166,6 @@ namespace DinoDiner.Menu
         public void updateCals()
         {
 
-        }
-
-        /// <summary>
-        /// Checks if properties have changed
-        /// </summary>
-        /// <param name="propertyName">name of the property</param>
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

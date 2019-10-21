@@ -21,11 +21,6 @@ namespace DinoDiner.Menu
         private bool cheese = true;
 
         /// <summary>
-        /// property changed event handler
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
         /// A list of the ingredients that are included in the current order of the Veloci-Wrap
         /// </summary>
         public override List<string> Ingredients
@@ -113,15 +108,6 @@ namespace DinoDiner.Menu
             this.cheese = false;
             NotifyOfPropertyChanged("Special");
             NotifyOfPropertyChanged("Ingredients");
-        }
-
-        /// <summary>
-        /// Checks if properties have changed
-        /// </summary>
-        /// <param name="propertyName">name of the property</param>
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

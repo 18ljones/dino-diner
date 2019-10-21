@@ -13,11 +13,6 @@ namespace DinoDiner.Menu
         private Size size;
 
         /// <summary>
-        /// property changed event handler
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
         /// specifies whether there is lemon
         /// </summary>
         public bool Lemon { get; set; }
@@ -91,6 +86,7 @@ namespace DinoDiner.Menu
             {
                 List<string> special = new List<string>();
                 if (Lemon) special.Add("Add Lemon");
+                if (!Ice) special.Add("Hold Ice");
                 return special.ToArray();
             }
         }
@@ -104,13 +100,5 @@ namespace DinoDiner.Menu
             return Size.ToString() + " Water";
         }
 
-        /// <summary>
-        /// Checks if properties have changed
-        /// </summary>
-        /// <param name="propertyName">name of the property</param>
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

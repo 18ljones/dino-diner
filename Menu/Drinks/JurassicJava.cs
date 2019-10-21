@@ -11,19 +11,38 @@ namespace DinoDiner.Menu
     public class JurassicJava : Drink
     {
         private Size size;
-
-        /// <summary>
-        /// property changed event handler
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
+        private bool decaf;
+        private bool roomForCream;
         /// <summary>
         /// specifies whether the is room for cream
         /// </summary>
-        public bool RoomForCream { get; set; }
+        public bool RoomForCream 
+        {
+            get
+            {
+                return roomForCream;
+            }
+            set
+            {
+                roomForCream = value;
+                NotifyOfPropertyChanged("Special");
+            }
+        }
         /// <summary>
         /// specifies whether it is decaf
         /// </summary>
-        public bool Decaf { get; set; }
+        public bool Decaf 
+        {
+            get
+            {
+                return decaf;
+            }
+            set
+            {
+                decaf = value;
+                NotifyOfPropertyChanged("Description");
+            }
+        }
         /// <summary>
         /// default constuctor for JurrasicJava
         /// </summary>
@@ -51,25 +70,18 @@ namespace DinoDiner.Menu
                     case Size.Small:
                         Price = 0.59;
                         Calories = 2;
-                        NotifyOfPropertyChanged("Price");
-                        NotifyOfPropertyChanged("Calories");
-                        NotifyOfPropertyChanged("Description");
                         break;
                     case Size.Medium:
                         Price = 0.99;
                         Calories = 4;
-                        NotifyOfPropertyChanged("Price");
-                        NotifyOfPropertyChanged("Calories");
-                        NotifyOfPropertyChanged("Description");
                         break;
                     case Size.Large:
                         Price = 1.49;
                         Calories = 8;
-                        NotifyOfPropertyChanged("Price");
-                        NotifyOfPropertyChanged("Calories");
-                        NotifyOfPropertyChanged("Description");
                         break;
                 }
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Description");
             }
         }
 
@@ -127,8 +139,8 @@ namespace DinoDiner.Menu
         /// </summary>
         public void LeaveRoomForCream()
         {
-            RoomForCream = true;
-            NotifyOfPropertyChanged("Special");        }
+            RoomForCream = true;    
+        }
         /// <summary>
         /// adds ice
         /// </summary>
@@ -136,15 +148,6 @@ namespace DinoDiner.Menu
         {
             Ice = true;
             NotifyOfPropertyChanged("Special");
-        }
-
-        /// <summary>
-        /// Checks if properties have changed
-        /// </summary>
-        /// <param name="propertyName">name of the property</param>
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
