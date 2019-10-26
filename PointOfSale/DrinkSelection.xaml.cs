@@ -1,6 +1,7 @@
 ﻿/* DrinkSelection.xaml.cs
  * Author: Logan Jones
  */
+using DinoDiner.Menu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,10 +27,23 @@ namespace PointOfSale
         /// <summary>
         /// keeps track of the current size
         /// </summary>
-        public string SelectedSize { get; private set; }
+        public DinoDiner.Menu.Size SelectedSize { get; private set; }
         public DrinkSelection()
         {
             InitializeComponent();
+        }
+
+        public DrinkSelection(string drink)
+        {
+            InitializeComponent();
+            switch(drink.ToLower()){
+                case ("sodasaurus"):
+                    Flavor.IsEnabled = true;
+                    Flavor.Opacity = 1;
+                    HoldIce.IsEnabled = true;
+                    HoldIce.Opacity = 1;
+                    break;
+            }
         }
 
         private void ButtonClickDrinkSize(object sender, RoutedEventArgs e)
@@ -49,93 +63,183 @@ namespace PointOfSale
             switch (sizeString)
             {
                 case ("Small"):
-                    SelectedSize = "small";
+                    SelectedSize = DinoDiner.Menu.Size.Small;
                     break;
                 case ("Medium"):
-                    SelectedSize = "medium";
+                    SelectedSize = DinoDiner.Menu.Size.Medium;
                     break;
                 case ("Large"):
-                    SelectedSize = "large";
+                    SelectedSize = DinoDiner.Menu.Size.Large;
                     break;
             }
         }
 
-        private void resetButtons(Grid grid)
+        private void OnDoneClicked(object sender, RoutedEventArgs args)
         {
-            for(int i = 1; i < grid.Children.Count; i++)
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
+        private void ChangeSize(object sender, RoutedEventArgs args)
+        {
+            ButtonClickDrinkSize(sender, args);
+            if (DataContext is Order order)
             {
-                Button temp = (Button)grid.Children[i];
-                temp.IsEnabled = false;
-                temp.Opacity = 0;
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Drink drink)
+                {
+                    drink.Size = SelectedSize;
+                }
             }
+        }
+
+        private void MakeDecaf(object sender, RoutedEventArgs args)
+        {
+            if(DataContext is Order order)
+            {
+                if(CollectionViewSource.GetDefaultView(order.Items).CurrentItem is JurassicJava java)
+                {
+                    if (!java.Decaf)
+                        java.Decaf = true;
+                    else
+                        java.Decaf = false;
+                }
+            }
+        }
+
+        private void MakeSweet(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Tyrannotea tea)
+                {
+                    if (!tea.Sweet)
+                        tea.Sweet = true;
+                    else
+                        tea.Sweet = false;
+                }
+            }
+        }
+
+        private void AddSomeLemon(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Tyrannotea tea)
+                {
+                    tea.AddLemon();
+                }
+                else if(CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Water water)
+                {
+                    water.AddLemon();
+                }
+            }
+        }
+
+        private void HoldTheIce(object sender, RoutedEventArgs args)
+        {
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Drink drink)
+                {
+                    if (drink is JurassicJava java)
+                        java.AddIce();
+                    else
+                        drink.HoldIce();
+                }
+            }
+        }
+
+        private void ChangeFlavors(object sender, RoutedEventArgs args)
+        {
+            if(DataContext is Order order)
+            {
+                NavigationService?.Navigate(new FlavorSelection());
+            }
+        }
+
+        private void OnAddDrink(object sender, RoutedEventArgs args)
+        {
+            Button drinkButton = sender as Button;
+            TextBlock buttonText = drinkButton.Content as TextBlock;
+            Drink drink = null;
+            if (DataContext is Order order)
+            {
+                switch (buttonText.Text.ToString())
+                {
+                    case ("Sodasaurus"):
+                        drink = new Sodasaurus();
+                        ButtonClickDrinkSodasaurus(sender, args);
+                        break;
+                    case ("Tyrannotea"):
+                        drink = new Tyrannotea();
+                        ButtonClickDrinkTyrannotea(sender, args);
+                        break;
+                    case ("Jurassic Java"):
+                        drink = new JurassicJava();
+                        ButtonClickDrinkJurrasicJava(sender, args);
+                        break;
+                    case ("Water"):
+                        drink = new Water();
+                        ButtonClickDrinkWater(sender, args);
+                        break;
+                }
+                order.Items.Add(drink);
+                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
+            }
+        }
+
+        private void resetButtons()
+        {
+            Flavor.IsEnabled = false;
+            Flavor.Opacity = 0;
+            Decaf.IsEnabled = false;
+            Decaf.Opacity = 0;
+            Sweet.IsEnabled = false;
+            Sweet.Opacity = 0;
+            AddLemon.IsEnabled = false;
+            AddLemon.Opacity = 0;
+            HoldIce.IsEnabled = false;
+            HoldIce.Opacity = 0;
+            AddIce.IsEnabled = false;
+            AddIce.Opacity = 0;
         }
 
         private void ButtonClickDrinkSodasaurus(object sender, RoutedEventArgs e)
         {
-            Button b = (Button)sender;
-            Grid parent = (Grid)b.Parent;
-            Grid parentParent = (Grid)parent.Parent;
-            Grid specialGrid = (Grid)parentParent.Children[3];
-            resetButtons(specialGrid);
-            Button flavor = (Button)specialGrid.Children[1];
-            flavor.IsEnabled = true;
-            flavor.Opacity = 1;
-            Button ice = (Button)specialGrid.Children[5];
-            ice.IsEnabled = true;
-            ice.Opacity = 1;
+            resetButtons();
+            Flavor.IsEnabled = true;
+            Flavor.Opacity = 1;
+            AddIce.IsEnabled = true;
+            AddIce.Opacity = 1;
         }
 
         private void ButtonClickDrinkTyrannotea(object sender, RoutedEventArgs e)
         {
-            Button b = (Button)sender;
-            Grid parent = (Grid)b.Parent;
-            Grid parentParent = (Grid)parent.Parent;
-            Grid specialGrid = (Grid)parentParent.Children[3];
-            resetButtons(specialGrid);
-            Button sweet = (Button)specialGrid.Children[3];
-            sweet.IsEnabled = true;
-            sweet.Opacity = 1;
-            Button lemon = (Button)specialGrid.Children[4];
-            lemon.IsEnabled = true;
-            lemon.Opacity = 1;
-            Button ice = (Button)specialGrid.Children[5];
-            ice.IsEnabled = true;
-            ice.Opacity = 1;
+            resetButtons();
+            Sweet.IsEnabled = true;
+            Sweet.Opacity = 1;
+            AddLemon.IsEnabled = true;
+            AddLemon.Opacity = 1;
+            AddIce.IsEnabled = true;
+            AddIce.Opacity = 1;
         }
 
         private void ButtonClickDrinkJurrasicJava(object sender, RoutedEventArgs e)
         {
-            Button b = (Button)sender;
-            Grid parent = (Grid)b.Parent;
-            Grid parentParent = (Grid)parent.Parent;
-            Grid specialGrid = (Grid)parentParent.Children[3];
-            resetButtons(specialGrid);
-            Button decaf = (Button)specialGrid.Children[2];
-            decaf.IsEnabled = true;
-            decaf.Opacity = 1;
-            Button ice = (Button)specialGrid.Children[5];
-            ice.IsEnabled = true;
-            ice.Opacity = 1;
+            resetButtons();
+            Decaf.IsEnabled = true;
+            Decaf.Opacity = 1;
+            AddIce.IsEnabled = true;
+            AddIce.Opacity = 1;
+            
         }
 
         private void ButtonClickDrinkWater(object sender, RoutedEventArgs e)
         {
-            Button b = (Button)sender;
-            Grid parent = (Grid)b.Parent;
-            Grid parentParent = (Grid)parent.Parent;
-            Grid specialGrid = (Grid)parentParent.Children[3];
-            resetButtons(specialGrid);
-            Button lemon = (Button)specialGrid.Children[4];
-            lemon.IsEnabled = true;
-            lemon.Opacity = 1;
-            Button ice = (Button)specialGrid.Children[5];
-            ice.IsEnabled = true;
-            ice.Opacity = 1;
-        }
-
-        private void ButtonClickComboFlavorSelection(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new FlavorSelection());
+            resetButtons();
+            AddLemon.IsEnabled = true;
+            AddLemon.Opacity = 1;
+            HoldIce.IsEnabled = true;
+            HoldIce.Opacity = 1;
         }
     }
 }

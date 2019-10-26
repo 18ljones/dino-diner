@@ -28,16 +28,16 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" TextAlignment="Center">Side</TextBlock>
-            <Button Grid.Column="0" Grid.Row="1" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Button Name="AddFryceritops" Grid.Column="0" Grid.Row="1" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="OnAddSide">
                 <TextBlock>Fryceritops</TextBlock>
             </Button>
-            <Button Grid.Column="0" Grid.Row="2" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Button Name="AddMeteorMac" Grid.Column="0" Grid.Row="2" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="OnAddSide">
                 <TextBlock>Meteor Mac &amp; Cheese</TextBlock>
             </Button>
-            <Button Grid.Column="0" Grid.Row="3" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Button Name="AddMezzSticks" Grid.Column="0" Grid.Row="3" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="OnAddSide">
                 <TextBlock>Mezzorella Sticks</TextBlock>
             </Button>
-            <Button Grid.Column="0" Grid.Row="4" Margin="25, 10, 10, 20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Button Name="AddTriceritots" Grid.Column="0" Grid.Row="4" Margin="25, 10, 10, 20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="OnAddSide">
                 <TextBlock>Triceritots</TextBlock>
             </Button>
         </Grid>
@@ -49,13 +49,13 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" TextAlignment="Center">Size</TextBlock>
-            <Button Grid.Column="0" Grid.Row="1" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ButtonClickSideSize">
+            <Button Name="ButtonSmall" Grid.Column="0" Grid.Row="1" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ChangeSize">
                 <TextBlock>Small</TextBlock>
             </Button>
-            <Button Grid.Column="0" Grid.Row="2" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ButtonClickSideSize">
+            <Button Name="ButtonMedium" Grid.Column="0" Grid.Row="2" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ChangeSize">
                 <TextBlock>Medium</TextBlock>
             </Button>
-            <Button Grid.Column="0" Grid.Row="3" Margin="25, 10, 10, 20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ButtonClickSideSize">
+            <Button Name="ButtonLarge" Grid.Column="0" Grid.Row="3" Margin="25, 10, 10, 20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ChangeSize">
                 <TextBlock>Large</TextBlock>
             </Button>
         </Grid>

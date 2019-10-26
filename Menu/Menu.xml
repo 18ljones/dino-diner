@@ -779,6 +779,11 @@
             Class for an order object
             </summary>
         </member>
+        <member name="E:DinoDiner.Menu.Order.PropertyChanged">
+            <summary>
+            notifies when a property is changed
+            </summary>
+        </member>
         <member name="P:DinoDiner.Menu.Order.Items">
             <summary>
             gets and sets the list of items in the order
@@ -803,6 +808,18 @@
             <summary>
             gets and sets the total cost
             </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Order.#ctor">
+            <summary>
+            constructor for an order item
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Order.OnCollectionChanged(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            OnCollectionChanged
+            </summary>
+            <param name="sender">the sender</param>
+            <param name="args">event handler</param>
         </member>
         <member name="T:DinoDiner.Menu.Fryceritops">
             <summary>

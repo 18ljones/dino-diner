@@ -1,6 +1,7 @@
 ﻿/* FlavorSelection.xaml.cs
  * Author: Logan Jones
  */
+using DinoDiner.Menu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,44 @@ namespace PointOfSale
         public FlavorSelection()
         {
             InitializeComponent();
+        }
+
+        private void ChooseFlavor(object sender, RoutedEventArgs args)
+        {
+            Button flavorButton = sender as Button;
+            TextBlock buttonText = flavorButton.Content as TextBlock;
+            string buttonString = buttonText.Text.ToString();
+            if (DataContext is Order order)
+            {
+                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus drink)
+                {
+                    switch (buttonString)
+                    {
+                        case ("Cherry"):
+                            drink.Flavor = SodasaurusFlavor.Cherry;
+                            break;
+                        case ("Chocolate"):
+                            drink.Flavor = SodasaurusFlavor.Chocolate;
+                            break;
+                        case ("Cola"):
+                            drink.Flavor = SodasaurusFlavor.Cola;
+                            break;
+                        case ("Lime"):
+                            drink.Flavor = SodasaurusFlavor.Lime;
+                            break;
+                        case ("Orange"):
+                            drink.Flavor = SodasaurusFlavor.Orange;
+                            break;
+                        case ("Rootbeer"):
+                            drink.Flavor = SodasaurusFlavor.RootBeer;
+                            break;
+                        case ("Vanilla"):
+                            drink.Flavor = SodasaurusFlavor.Vanilla;
+                            break;
+                    }
+                }
+            }
+            NavigationService.Navigate(new DrinkSelection("sodasaurus"));
         }
     }
 }
