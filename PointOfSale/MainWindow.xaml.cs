@@ -32,15 +32,16 @@ namespace PointOfSale
             Order order = DataContext as Order;
             if(order != null)
             {
-                order.Items.Add(new DinoNuggets());
-                order.Items.Add(new Sodasaurus());
+                OrderControl.NavigationService = OrderUI.NavigationService;
+                order.Add(new DinoNuggets());
+                order.Add(new Sodasaurus());
                 Triceritots tots = new Triceritots();
-                order.Items.Add(tots);
+                order.Add(tots);
                 SteakosaurusBurger sb = new SteakosaurusBurger();
                 sb.HoldBun();
                 sb.HoldMustard();
                 sb.HoldPickle();
-                order.Items.Add(sb);
+                order.Add(sb);
             }
         }
 

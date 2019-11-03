@@ -60,7 +60,7 @@ namespace PointOfSale
                         entree = new VelociWrap();
                         break;
                 }
-                order.Items.Add(entree);
+                order.Add(entree);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
                 NavigationService.Navigate(new MenuCategorySelection());
             }

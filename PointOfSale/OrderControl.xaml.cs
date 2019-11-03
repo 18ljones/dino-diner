@@ -37,7 +37,7 @@ namespace PointOfSale
                 {
                     if(element.DataContext is IOrderItem item)
                     {
-                        order.Items.Remove(item);
+                        order.Remove(item);
                     }
                 }
             }
@@ -47,20 +47,7 @@ namespace PointOfSale
         {
             if (OrderItems.SelectedItem is Side side)
             {
-                NavigationService?.Navigate(new SideSelection(true));
-            }
-        }
-
-        public void OnCollectionChanged(object sender, EventArgs args)
-        {
-
-        }
-
-        public void MountItemListener()
-        {
-            if(DataContext is Order order)
-            {
-                order.Items.CollectionChanged += OnCollectionChanged;
+                NavigationService?.Navigate(new SideSelection(side));
             }
         }
     }

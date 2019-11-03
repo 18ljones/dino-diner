@@ -182,7 +182,7 @@ namespace PointOfSale
                         ButtonClickDrinkWater(sender, args);
                         break;
                 }
-                order.Items.Add(drink);
+                order.Add(drink);
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
             }
         }

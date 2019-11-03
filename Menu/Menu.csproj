@@ -5,6 +5,7 @@
     <RootNamespace>DinoDiner.Menu</RootNamespace>
   </PropertyGroup>
 
+<<<<<<< HEAD
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>D:\Documents\CollegeStuff\CIS400\dino-diner\Menu\Menu.xml</DocumentationFile>
   </PropertyGroup>
@@ -13,4 +14,6 @@
     <Folder Include="Milestones\" />
   </ItemGroup>
 
+=======
+>>>>>>> f5ab4187b46413023088671f0c3df19701a1aace
 </Project>

@@ -29,17 +29,20 @@ namespace PointOfSale
         /// keeps track of the current size
         /// </summary>
         public DinoDiner.Menu.Size SelectedSize { get; private set; }
+
+        private Side side;
+
         public SideSelection()
         {
             //DataContext = side;
             InitializeComponent();
         }
 
-        public SideSelection(bool isEdit)
+        public SideSelection(Side side)
         {
             //DataContext = side;
             InitializeComponent();
-            if(isEdit)DisableSides();
+            this.side = side;
         }
 
         private void ButtonClickSideSize(object sender, RoutedEventArgs e)
@@ -92,7 +95,7 @@ namespace PointOfSale
                         side = new Triceritots();
                         break;
                 }
-                order.Items.Add(side);
+                order.Add(side);
                 DisableSides();
                 CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
             }
@@ -101,13 +104,8 @@ namespace PointOfSale
         public void ChangeSize(object sender, RoutedEventArgs args)
         {
             ButtonClickSideSize(sender, args);
-            if (DataContext is Order order)
-            {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Side side)
-                {
-                    side.Size = SelectedSize;
-                }
-            }
+            if (side != null)
+                side.Size = SelectedSize;
             NavigationService.Navigate(new MenuCategorySelection());
         }
 

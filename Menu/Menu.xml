@@ -789,6 +789,19 @@
             gets and sets the list of items in the order
             </summary>
         </member>
+        <member name="M:DinoDiner.Menu.Order.Add(DinoDiner.Menu.IOrderItem)">
+            <summary>
+            adds an item to the list of items
+            </summary>
+            <param name="item">the item being added</param>
+        </member>
+        <member name="M:DinoDiner.Menu.Order.Remove(DinoDiner.Menu.IOrderItem)">
+            <summary>
+            removes an item from the order
+            </summary>
+            <param name="item"></param>
+            <returns>whether the item was able to be removed</returns>
+        </member>
         <member name="P:DinoDiner.Menu.Order.SubtotalCost">
             <summary>
             gets and sets the subtotal cost

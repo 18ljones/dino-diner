@@ -18,6 +18,7 @@ namespace DinoDiner.Menu
     {
 
         private double salesTaxRate;
+        List<IOrderItem> items = new List<IOrderItem>();
 
         /// <summary>
         /// notifies when a property is changed
@@ -27,7 +28,39 @@ namespace DinoDiner.Menu
         /// <summary>
         /// gets and sets the list of items in the order
         /// </summary>
-        public ObservableCollection<IOrderItem> Items { get; set; }
+        public IOrderItem[] Items { get { return items.ToArray(); } }
+
+        /// <summary>
+        /// adds an item to the list of items
+        /// </summary>
+        /// <param name="item">the item being added</param>
+        public void Add(IOrderItem item)
+        {
+            item.PropertyChanged += OnItemPropertyChanged;
+            items.Add(item);
+            NotifyPropertyChanged("Items");
+            NotifyPropertyChanged("SubtotalCost");
+            NotifyPropertyChanged("SalesTaxCost");
+            NotifyPropertyChanged("TotalCost");
+        }
+        
+        /// <summary>
+        /// removes an item from the order
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns>whether the item was able to be removed</returns>
+        public bool Remove(IOrderItem item)
+        {
+            bool removed = items.Remove(item);
+            if (removed)
+            {
+                NotifyPropertyChanged("Items");
+                NotifyPropertyChanged("SubtotalCost");
+                NotifyPropertyChanged("SalesTaxCost");
+                NotifyPropertyChanged("TotalCost");
+            }
+            return removed;
+        }
 
         /// <summary>
         /// gets and sets the subtotal cost
@@ -87,9 +120,7 @@ namespace DinoDiner.Menu
         /// constructor for an order item
         /// </summary>
         public Order()
-        {
-            Items = new ObservableCollection<IOrderItem>();
-            this.Items.CollectionChanged += this.OnCollectionChanged;
+        {   
             salesTaxRate = 0.09;
         }
 
@@ -99,6 +130,13 @@ namespace DinoDiner.Menu
         /// <param name="sender">the sender</param>
         /// <param name="args">event handler</param>
         public void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+        {
+            NotifyPropertyChanged("SubtotalCost");
+            NotifyPropertyChanged("SalesTaxCost");
+            NotifyPropertyChanged("TotalCost");
+        }
+
+        private void OnItemPropertyChanged(object sender, PropertyChangedEventArgs args)
         {
             NotifyPropertyChanged("SubtotalCost");
             NotifyPropertyChanged("SalesTaxCost");
