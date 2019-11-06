@@ -16,6 +16,7 @@
             <RowDefinition Height="35"/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBlock Margin="2" HorizontalAlignment="Stretch" VerticalAlignment="Top" TextAlignment="Center" Grid.ColumnSpan="2">Add To Order</TextBlock>
         <TextBlock Margin ="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" TextAlignment="Center" Grid.ColumnSpan="2">Customize Combo</TextBlock>
@@ -26,11 +27,11 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center">Side</TextBlock>
             <Button Grid.Column="0" Margin="25" Click="ButtonClickComboSideSelection">
-                <TextBlock>Friceritops</TextBlock>
+                <TextBlock Name="SideButton">Side</TextBlock>
             </Button>
             <TextBlock Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center">Drink</TextBlock>
             <Button Grid.Column="1" Margin="25" Click="ButtonClickComboDrinkSelection">
-                <TextBlock>Sodasaurus</TextBlock>
+                <TextBlock Name="DrinkButton">Drink</TextBlock>
             </Button>
         </Grid>
         <Grid Grid.Row="2">
@@ -48,6 +49,18 @@
             </Button>
             <Button Grid.Column="2" Margin="0, 25, 25, 25" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ButtonClickSize">
                 <TextBlock>Large</TextBlock>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="25" Click="OnCustomizeEntreeClicked">
+                <TextBlock>Customize Entree</TextBlock>
+            </Button>
+            <Button Grid.Column="1" Margin="25" Click="ButtonClickDone">
+                <TextBlock>Done</TextBlock>
             </Button>
         </Grid>
     </Grid>

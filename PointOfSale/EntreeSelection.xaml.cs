@@ -24,6 +24,7 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
+        private Entree entree;
         public EntreeSelection()
         {
             InitializeComponent();
@@ -60,9 +61,12 @@ namespace PointOfSale
                         entree = new VelociWrap();
                         break;
                 }
+                this.entree = entree;
                 order.Add(entree);
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
-                NavigationService.Navigate(new MenuCategorySelection());
+                if(entree is PterodactylWings) 
+                    NavigationService.Navigate(new MenuCategorySelection());
+                else
+                    NavigationService.Navigate(new EntreeCustomization(this.entree));
             }
         }
     }

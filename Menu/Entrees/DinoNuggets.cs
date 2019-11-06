@@ -92,5 +92,22 @@ namespace DinoDiner.Menu
             NotifyOfPropertyChanged("Special");
             NotifyOfPropertyChanged("Ingredients");
         }
+
+        /// <summary>
+        /// allows the user to remove a nugget to their order for an extra $0.25 and updates the calories accordingly
+        /// </summary>
+        public void RemoveNugget()
+        {
+            if (nuggets > 6)
+            {
+                nuggets--;
+                Calories -= 59;
+                Price -= .25;
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Ingredients");
+            }
+        }
     }
 }

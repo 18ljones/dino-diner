@@ -21,9 +21,9 @@
         <TextBlock Text="#" Grid.Column="1" FontWeight="Bold" Margin="5,0,0,0"/>
         <ListBox Name="OrderItems" 
                  Grid.Row="1" Grid.ColumnSpan="2" 
-                 ItemsSource="{Binding Path=Items}" 
-                 IsSynchronizedWithCurrentItem="True"
-                 SelectionChanged="OnSelectionChanged">
+                 ItemsSource="{Binding Path=Items, UpdateSourceTrigger=PropertyChanged}" 
+                 IsSynchronizedWithCurrentItem="False"
+                 SelectionChanged="OnSelectionChange">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

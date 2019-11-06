@@ -33,15 +33,6 @@ namespace PointOfSale
             if(order != null)
             {
                 OrderControl.NavigationService = OrderUI.NavigationService;
-                order.Add(new DinoNuggets());
-                order.Add(new Sodasaurus());
-                Triceritots tots = new Triceritots();
-                order.Add(tots);
-                SteakosaurusBurger sb = new SteakosaurusBurger();
-                sb.HoldBun();
-                sb.HoldMustard();
-                sb.HoldPickle();
-                order.Add(sb);
             }
         }
 

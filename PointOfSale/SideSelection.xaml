@@ -59,5 +59,8 @@
                 <TextBlock>Large</TextBlock>
             </Button>
         </Grid>
+        <Button Name="Done" Grid.Column="2" Grid.Row="1" Margin="25, 10, 10, 20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsEnabled="False" Opacity="0" Click="OnClickDone">
+            <TextBlock>Done</TextBlock>
+        </Button>
     </Grid>
 </Page>

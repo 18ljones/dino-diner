@@ -24,8 +24,17 @@ namespace PointOfSale
     /// </summary>
     public partial class FlavorSelection : Page
     {
+
+        private Drink soda;
+
         public FlavorSelection()
         {
+            InitializeComponent();
+        }
+
+        public FlavorSelection(Drink soda)
+        {
+            this.soda = soda;
             InitializeComponent();
         }
 
@@ -36,7 +45,7 @@ namespace PointOfSale
             string buttonString = buttonText.Text.ToString();
             if (DataContext is Order order)
             {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Sodasaurus drink)
+                if (soda is Sodasaurus drink)
                 {
                     switch (buttonString)
                     {
@@ -64,7 +73,7 @@ namespace PointOfSale
                     }
                 }
             }
-            NavigationService.Navigate(new DrinkSelection("sodasaurus"));
+            NavigationService.Navigate(new DrinkSelection(soda));
         }
     }
 }

@@ -18,7 +18,7 @@ namespace DinoDiner.Menu
     {
 
         private double salesTaxRate;
-        List<IOrderItem> items = new List<IOrderItem>();
+        private List<IOrderItem> items = new List<IOrderItem>();
 
         /// <summary>
         /// notifies when a property is changed
@@ -141,6 +141,7 @@ namespace DinoDiner.Menu
             NotifyPropertyChanged("SubtotalCost");
             NotifyPropertyChanged("SalesTaxCost");
             NotifyPropertyChanged("TotalCost");
+            NotifyPropertyChanged("Items");
         }
 
         private void NotifyPropertyChanged(string propertyName)

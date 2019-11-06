@@ -1,0 +1,74 @@
+﻿<Page x:Class="PointOfSale.EntreeCustomization"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointOfSale"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EntreeCustomization">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" Margin="0,0,0,212.6" Grid.RowSpan="2">Add To Order</TextBlock>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Name="HoldBun" Grid.Column="0" Grid.Row="0" Margin="20" IsEnabled="False" Opacity="0" Click="OnHoldBunClicked">
+                <TextBlock>Hold Bun</TextBlock>
+            </Button>
+            <Button Name="HoldKetchup" Grid.Column="1" Grid.Row="0" Margin="20" IsEnabled="False" Opacity="0" Click="OnHoldKetchupClicked">
+                <TextBlock>Hold Ketchup</TextBlock>
+            </Button>
+            <Button Name="AddNugget" Grid.Column="1" Grid.Row="0" Margin="20" IsEnabled="False" Opacity="0" Click="OnAddNuggetClicked">
+                <TextBlock>Add Nugget</TextBlock>
+            </Button>
+            <Button Name="HoldMustard" Grid.Column="2" Grid.Row="0" Margin="20" IsEnabled="False" Opacity="0" Click="OnHoldMustardClicked">
+                <TextBlock>Hold Mustard</TextBlock>
+            </Button>
+            <Button Name="HoldPB" Grid.Column="2" Grid.Row="0" Margin="20" IsEnabled="False" Opacity="0" Click="OnHoldPBClicked">
+                <TextBlock>Hold Peanut Butter</TextBlock>
+            </Button>
+            <Button Name="HoldOnion" Grid.Column="0" Grid.Row="1" Margin="20" IsEnabled="False" Opacity="0" Click="OnHoldOnionClicked">
+                <TextBlock>Hold Onion</TextBlock>
+            </Button>
+            <Button Name="HoldDressing" Grid.Column="0" Grid.Row="1" Margin="20" IsEnabled="False" Opacity="0" Click="OnHoldDressingClicked">
+                <TextBlock>Hold Dressing</TextBlock>
+            </Button>
+            <Button Name="HoldPickle" Grid.Column="1" Grid.Row="1" Margin="20" IsEnabled="False" Opacity="0" Click="OnHoldPickleClicked">
+                <TextBlock>Hold Pickle</TextBlock>
+            </Button>
+            <Button Name="HoldCheese" Grid.Column="1" Grid.Row="1" Margin="20" IsEnabled="False" Opacity="0" Click="OnHoldCheeseClicked">
+                <TextBlock>Hold Cheese</TextBlock>
+            </Button>
+            <Button Name="RemoveNugget" Grid.Column="1" Grid.Row="1" Margin="20" IsEnabled="False" Opacity="0" Click="OnRemoveNuggetClicked">
+                <TextBlock>Remove Nugget</TextBlock>
+            </Button>
+            <Button Name="HoldLettuce" Grid.Column="2" Grid.Row="1" Margin="20" IsEnabled="False" Opacity="0" Click="OnHoldLettuceClicked">
+                <TextBlock>Hold Lettuce</TextBlock>
+            </Button>
+            <Button Name="HoldJelly" Grid.Column="2" Grid.Row="1" Margin="20" IsEnabled="False" Opacity="0" Click="OnHoldJellyClicked">
+                <TextBlock>Hold Jelly</TextBlock>
+            </Button>
+            <Button Name="HoldPeppers" Grid.Column="0" Grid.Row="2" Margin="20" IsEnabled="False" Opacity="0" Click="OnHoldPeppersClicked">
+                <TextBlock>Hold Peppers</TextBlock>
+            </Button>
+            <Button Name="HoldTomato" Grid.Column="0" Grid.Row="2" Margin="20" IsEnabled="False" Opacity="0" Click="OnHoldTomatoClicked">
+                <TextBlock>Hold Tomato</TextBlock>
+            </Button>
+            <Button Name="DoneButton" Grid.Column="1" Grid.Row="2" Margin="20" Background="CornflowerBlue" Click="OnDoneClicked">
+                <TextBlock>Done</TextBlock>
+            </Button>
+            <Button Name="HoldMayo" Grid.Column="2" Grid.Row="2" Margin="20" IsEnabled="False" Opacity="0" Click="OnHoldMayoClicked">
+                <TextBlock>Hold Mayo</TextBlock>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>

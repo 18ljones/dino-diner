@@ -429,6 +429,11 @@
             allows the user to add a nugget to their order for an extra $0.25 and updates the calories accordingly
             </summary>
         </member>
+        <member name="M:DinoDiner.Menu.DinoNuggets.RemoveNugget">
+            <summary>
+            allows the user to remove a nugget to their order for an extra $0.25 and updates the calories accordingly
+            </summary>
+        </member>
         <member name="T:DinoDiner.Menu.Entree">
             <summary>
             represents the Entree base objext

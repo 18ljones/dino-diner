@@ -20,11 +20,11 @@ namespace MenuTest
             PrehistoricPBJ pb3 = new PrehistoricPBJ();
             Triceritots tt = new Triceritots();
             Sodasaurus ss = new Sodasaurus();
-            o.Items.Add(pb1);
-            o.Items.Add(pb2);
-            o.Items.Add(pb3);
-            o.Items.Add(tt);
-            o.Items.Add(ss);
+            o.Add(pb1);
+            o.Add(pb2);
+            o.Add(pb3);
+            o.Add(tt);
+            o.Add(ss);
 
             double subtotal = pb1.Price + pb2.Price + pb3.Price + tt.Price + ss.Price;
             Assert.Equal<double>(subtotal, o.SubtotalCost);
@@ -38,8 +38,8 @@ namespace MenuTest
             VelociWrap vw = new VelociWrap();
             dn.Price = -9000;
             vw.Price = -1;
-            o.Items.Add(dn);
-            o.Items.Add(vw);
+            o.Add(dn);
+            o.Add(vw);
             Assert.Equal<double>(0.00, o.SubtotalCost);
         }
 
@@ -52,11 +52,11 @@ namespace MenuTest
             PrehistoricPBJ pb3 = new PrehistoricPBJ();
             Triceritots tt = new Triceritots();
             Sodasaurus ss = new Sodasaurus();
-            o.Items.Add(pb1);
-            o.Items.Add(pb2);
-            o.Items.Add(pb3);
-            o.Items.Add(tt);
-            o.Items.Add(ss);
+            o.Add(pb1);
+            o.Add(pb2);
+            o.Add(pb3);
+            o.Add(tt);
+            o.Add(ss);
 
             double salesTax = (pb1.Price + pb2.Price + pb3.Price + tt.Price + ss.Price) * o.SalesTaxRate;
             Assert.Equal<double>(salesTax, o.SalesTaxCost);
@@ -71,11 +71,11 @@ namespace MenuTest
             PrehistoricPBJ pb3 = new PrehistoricPBJ();
             Triceritots tt = new Triceritots();
             Sodasaurus ss = new Sodasaurus();
-            o.Items.Add(pb1);
-            o.Items.Add(pb2);
-            o.Items.Add(pb3);
-            o.Items.Add(tt);
-            o.Items.Add(ss);
+            o.Add(pb1);
+            o.Add(pb2);
+            o.Add(pb3);
+            o.Add(tt);
+            o.Add(ss);
 
             double salesTax = (pb1.Price + pb2.Price + pb3.Price + tt.Price + ss.Price) * o.SalesTaxRate;
             double subtotal = pb1.Price + pb2.Price + pb3.Price + tt.Price + ss.Price;

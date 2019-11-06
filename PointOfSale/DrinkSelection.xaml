@@ -30,16 +30,16 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" TextAlignment="Center">Drink</TextBlock>
-            <Button Grid.Column="0" Grid.Row="1" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="OnAddDrink">
+            <Button Name="SodaButton" Grid.Column="0" Grid.Row="1" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="OnAddDrink">
                 <TextBlock>Sodasaurus</TextBlock>
             </Button>
-            <Button Grid.Column="0" Grid.Row="2" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="OnAddDrink">
+            <Button Name="TeaButton" Grid.Column="0" Grid.Row="2" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="OnAddDrink">
                 <TextBlock>Tyrannotea</TextBlock>
             </Button>
-            <Button Grid.Column="0" Grid.Row="3" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="OnAddDrink">
+            <Button Name="JavaButton" Grid.Column="0" Grid.Row="3" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="OnAddDrink">
                 <TextBlock>Jurassic Java</TextBlock>
             </Button>
-            <Button Grid.Column="0" Grid.Row="4" Margin="25, 10, 10, 20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="OnAddDrink">
+            <Button Name="WaterButton" Grid.Column="0" Grid.Row="4" Margin="25, 10, 10, 20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="OnAddDrink">
                 <TextBlock>Water</TextBlock>
             </Button>
         </Grid>
@@ -51,13 +51,13 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" TextAlignment="Center">Size</TextBlock>
-            <Button Grid.Column="0" Grid.Row="1" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ChangeSize">
+            <Button Grid.Column="0" Grid.Row="1" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ButtonClickDrinkSize">
                 <TextBlock>Small</TextBlock>
             </Button>
-            <Button Grid.Column="0" Grid.Row="2" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ChangeSize">
+            <Button Grid.Column="0" Grid.Row="2" Margin="25, 10, 10, 10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ButtonClickDrinkSize">
                 <TextBlock>Medium</TextBlock>
             </Button>
-            <Button Grid.Column="0" Grid.Row="3" Margin="25, 10, 10, 20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ChangeSize">
+            <Button Grid.Column="0" Grid.Row="3" Margin="25, 10, 10, 20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="ButtonClickDrinkSize">
                 <TextBlock>Large</TextBlock>
             </Button>
         </Grid>

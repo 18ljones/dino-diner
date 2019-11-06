@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -28,8 +29,20 @@ namespace PointOfSale
         /// </summary>
         public string SelectedSize { get; private set; }
 
+        private CretaceousCombo combo;
+        private Drink drink;
+        private Side side;
+
         public CustomizeCombo()
         {
+            InitializeComponent();
+        }
+
+        public CustomizeCombo(CretaceousCombo combo)
+        {
+            this.combo = combo;
+            this.drink = combo.Drink;
+            this.side = combo.Side;
             InitializeComponent();
         }
 
@@ -51,24 +64,47 @@ namespace PointOfSale
             {
                 case ("Small"):
                     SelectedSize = "small";
+                    combo.Side.Size = DinoDiner.Menu.Size.Small;
+                    //combo.Side = side;
+                    combo.Drink.Size = DinoDiner.Menu.Size.Small;
+                    //combo.Drink = drink;
                     break;
                 case ("Medium"):
                     SelectedSize = "medium";
+                    combo.Side.Size = DinoDiner.Menu.Size.Medium;
+                    //combo.Side = side;
+                    combo.Drink.Size = DinoDiner.Menu.Size.Medium;
+                    //combo.Drink = drink;
                     break;
                 case ("Large"):
                     SelectedSize = "large";
+                    combo.Side.Size = DinoDiner.Menu.Size.Large;
+                    //combo.Side = side;
+                    combo.Drink.Size = DinoDiner.Menu.Size.Large;
+                    //combo.Drink = drink;
                     break;
             }
 
         }
 
+        private void ButtonClickDone(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new MenuCategorySelection());
+        }
+
         private void ButtonClickComboSideSelection(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new SideSelection());
+            NavigationService.Navigate(new SideSelection(combo));
         }
         private void ButtonClickComboDrinkSelection(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new DrinkSelection());
+            NavigationService.Navigate(new DrinkSelection(combo));
         }
+
+        private void OnCustomizeEntreeClicked(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new EntreeCustomization(combo));
+        }
+
     }
 }

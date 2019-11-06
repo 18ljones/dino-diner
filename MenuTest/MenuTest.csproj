@@ -20,4 +20,10 @@
     <Folder Include="Entrees\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Menu">
+      <HintPath>..\Menu\bin\Debug\netstandard2.0\Menu.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

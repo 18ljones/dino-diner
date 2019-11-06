@@ -31,6 +31,9 @@ namespace PointOfSale
         public DinoDiner.Menu.Size SelectedSize { get; private set; }
 
         private Side side;
+        private CretaceousCombo combo;
+
+        private bool isCombo = false;
 
         public SideSelection()
         {
@@ -43,6 +46,22 @@ namespace PointOfSale
             //DataContext = side;
             InitializeComponent();
             this.side = side;
+            onSideEdit(side);
+        }
+
+        public SideSelection(CretaceousCombo combo)
+        {
+            this.side = combo.Side;
+            this.combo = combo;
+            isCombo = true;
+            InitializeComponent();
+            Done.IsEnabled = true;
+            Done.Opacity = 1;
+        }
+
+        private void onSideEdit(Side side)
+        {
+            DisableSides();
         }
 
         private void ButtonClickSideSize(object sender, RoutedEventArgs e)
@@ -52,24 +71,34 @@ namespace PointOfSale
             TextBlock size = (TextBlock)b.Content;
             string sizeString = size.Text.ToString();
 
-            for (int i = 1; i < parent.Children.Count; i++)
+            if (side != null)
             {
-                Button temp = (Button)parent.Children[i];
-                temp.Background = Brushes.LightGray;
-            }
-            b.Background = Brushes.LightSteelBlue;
+                for (int i = 1; i < parent.Children.Count; i++)
+                {
+                    Button temp = (Button)parent.Children[i];
+                    temp.Background = Brushes.LightGray;
+                }
+                b.Background = Brushes.LightSteelBlue;
 
-            switch (sizeString)
-            {
-                case ("Small"):
-                    SelectedSize = DinoDiner.Menu.Size.Small;
-                    break;
-                case ("Medium"):
-                    SelectedSize = DinoDiner.Menu.Size.Medium;
-                    break;
-                case ("Large"):
-                    SelectedSize = DinoDiner.Menu.Size.Large;
-                    break;
+                if (DataContext is Order order)
+                {
+                    switch (sizeString)
+                    {
+                        case ("Small"):
+                            SelectedSize = DinoDiner.Menu.Size.Small;
+                            side.Size = DinoDiner.Menu.Size.Small;
+                            break;
+                        case ("Medium"):
+                            SelectedSize = DinoDiner.Menu.Size.Medium;
+                            side.Size = DinoDiner.Menu.Size.Medium;
+                            break;
+                        case ("Large"):
+                            SelectedSize = DinoDiner.Menu.Size.Large;
+                            side.Size = DinoDiner.Menu.Size.Large;
+                            break;
+                    }
+                    //order.Add(side);
+                }
             }
         }
 
@@ -77,7 +106,6 @@ namespace PointOfSale
         {
             Button sideButton = sender as Button;
             TextBlock buttonText = sideButton.Content as TextBlock;
-            Side side = null;
             if (DataContext is Order order)
             {
                 switch (buttonText.Text.ToString())
@@ -95,9 +123,10 @@ namespace PointOfSale
                         side = new Triceritots();
                         break;
                 }
-                order.Add(side);
+                if (combo != null) combo.Side = side;
+                if(!isCombo) order.Add(side);
+                //CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
                 DisableSides();
-                CollectionViewSource.GetDefaultView(order.Items).MoveCurrentToLast();
             }
         }
 
@@ -106,7 +135,7 @@ namespace PointOfSale
             ButtonClickSideSize(sender, args);
             if (side != null)
                 side.Size = SelectedSize;
-            NavigationService.Navigate(new MenuCategorySelection());
+            if(!isCombo) NavigationService.Navigate(new MenuCategorySelection());
         }
 
         private void EnableSides()
@@ -123,6 +152,11 @@ namespace PointOfSale
             AddMeteorMac.IsEnabled = false;
             AddMezzSticks.IsEnabled = false;
             AddTriceritots.IsEnabled = false;
+        }
+
+        private void OnClickDone(object sender, RoutedEventArgs args)
+        {
+            NavigationService.Navigate(new CustomizeCombo(combo));
         }
 
         /*public void MakeMedium(object sender, RoutedEventArgs args)
@@ -149,20 +183,5 @@ namespace PointOfSale
             ButtonClickSideSize(sender, args);
         }
         */
-
-        public void OnCurrentContextChanged(object sender, DependencyPropertyChangedEventArgs args)
-        {
-            if (DataContext is Order order)
-            {
-                if (CollectionViewSource.GetDefaultView(order.Items).CurrentItem is Side side)
-                {
-                    switch (side.Size)
-                    {
-
-                    }
-                    AddFryceritops.IsEnabled = false;
-                }
-            }
-        }
     }
 }

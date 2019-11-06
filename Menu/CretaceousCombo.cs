@@ -16,6 +16,7 @@ namespace DinoDiner.Menu
         private Entree entree;
         private Drink drink = new Sodasaurus();
         private Side side = new Fryceritops();
+        private Size size = Size.Small;
 
         /// <summary>
         /// represents the Entree in the combo
@@ -29,9 +30,11 @@ namespace DinoDiner.Menu
             set
             {
                 entree = value;
+                entree.PropertyChanged += OnItemPropertyChanged;
                 NotifyOfPropertyChanged("Description");
                 NotifyOfPropertyChanged("Price");
                 NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Entree");
             }
         }
 
@@ -47,8 +50,11 @@ namespace DinoDiner.Menu
             set
             {
                 drink = value;
+                drink.Size = Size;
+                drink.PropertyChanged += OnItemPropertyChanged;
                 NotifyOfPropertyChanged("Price");
                 NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Drink");
             }
         }
 
@@ -64,6 +70,23 @@ namespace DinoDiner.Menu
             set
             {
                 side = value;
+                side.Size = Size;
+                side.PropertyChanged += OnItemPropertyChanged;
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Side");
+            }
+        }
+
+        public Size Size
+        {
+            get
+            {
+                return size;
+            }
+            set
+            {
+                size = value;
                 NotifyOfPropertyChanged("Price");
                 NotifyOfPropertyChanged("Special");
             }
@@ -155,8 +178,18 @@ namespace DinoDiner.Menu
         /// <param name="entree">the entree</param>
         public CretaceousCombo(Entree entree)
         {
+           
             this.Entree = entree;
+            this.entree.PropertyChanged += OnItemPropertyChanged;
+            NotifyOfPropertyChanged("Entree");
             this.Toy = "PS4";
+        }
+
+        private void OnItemPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            NotifyOfPropertyChanged("Special");
+            NotifyOfPropertyChanged("Price");
+            NotifyOfPropertyChanged("Description");
         }
     }
 }

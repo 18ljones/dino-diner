@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -23,6 +24,8 @@ namespace PointOfSale
     /// </summary>
     public partial class ComboSelection : Page
     {
+        private CretaceousCombo combo;
+
         public ComboSelection()
         {
             InitializeComponent();
@@ -30,7 +33,46 @@ namespace PointOfSale
 
         private void ButtonClickEntreeComboSelection(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CustomizeCombo());
+            if (DataContext is Order order)
+            {
+                if (sender as Button == BrontoButton)
+                {
+                    combo = new CretaceousCombo(new Brontowurst());
+                    order.Add(combo);
+                }
+                else if (sender as Button == NugButton)
+                {
+                    combo = new CretaceousCombo(new DinoNuggets());
+                    order.Add(combo);
+                }
+                else if (sender as Button == PBJButton)
+                {
+                    combo = new CretaceousCombo(new PrehistoricPBJ());
+                    order.Add(combo);
+                }
+                else if (sender as Button == PteroButton)
+                {
+                    combo = new CretaceousCombo(new PterodactylWings());
+                    order.Add(combo);
+                }
+                else if (sender as Button == SteakButton)
+                {
+                    combo = new CretaceousCombo(new SteakosaurusBurger());
+                    order.Add(combo);
+                }
+                else if (sender as Button == KingButton)
+                {
+                    combo = new CretaceousCombo(new TRexKingBurger());
+                    order.Add(combo);
+                }
+                else if (sender as Button == VeloButton)
+                {
+                    combo = new CretaceousCombo(new VelociWrap());
+                    order.Add(combo);
+                }
+            }
+            NavigationService.Navigate(new CustomizeCombo(combo));
         }
+
     }
 }

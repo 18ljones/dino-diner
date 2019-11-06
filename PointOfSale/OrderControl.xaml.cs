@@ -38,17 +38,31 @@ namespace PointOfSale
                     if(element.DataContext is IOrderItem item)
                     {
                         order.Remove(item);
+                        NavigationService.Navigate(new MenuCategorySelection());
                     }
                 }
             }
         }
 
-        public void OnSelectionChanged(object sender, SelectionChangedEventArgs args)
+        public void OnSelectionChange(object sender, RoutedEventArgs args)
         {
             if (OrderItems.SelectedItem is Side side)
             {
                 NavigationService?.Navigate(new SideSelection(side));
             }
+            else if(OrderItems.SelectedItem is Drink drink)
+            {
+                NavigationService?.Navigate(new DrinkSelection(drink));
+            }
+            else if(OrderItems.SelectedItem is Entree entree)
+            {
+                NavigationService?.Navigate(new EntreeCustomization(entree));
+            }
+            else if(OrderItems.SelectedItem is CretaceousCombo combo)
+            {
+                NavigationService?.Navigate(new CustomizeCombo(combo));
+            }
+            //CollectionViewSource.GetDefaultView(OrderItems.Items).MoveCurrentToLast();
         }
     }
 }
