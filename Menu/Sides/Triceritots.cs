@@ -97,5 +97,13 @@ namespace DinoDiner.Menu
             base.Calories = 352;
             base.Price = 0.99;
         }
+
+        /// <summary>
+        /// Constructor for a Fryceritops Side menu item
+        /// </summary>
+        public Triceritots(Size newSize)
+        {
+            Size = newSize;
+        }
     }
 }

@@ -1,0 +1,63 @@
+﻿@page
+@model Website.Pages.MenuModel
+@{
+    ViewData["Title"] = "Menu Page";
+}
+
+<div id="menuItems" class="center">
+    <div class="item"><a href="Index">Home Page</a></div>
+    <div class="item"><a href="Privacy">Privacy Policy</a></div>
+    <div class="item"><a href="About">About</a></div>
+</div>
+
+<h1 class="center">Menu</h1>
+<h2 class="center">Combos</h2>
+@for (int i = 0; i < Model.MenuItems.AvailableEntrees.Count; i++)
+{
+    <div class="menu-item">
+        <p>@(Model.MenuItems.AvailableEntrees[i].ToString()) Combo</p>
+    </div>
+}
+    <h2 class="center">Entrees</h2>
+    @for (int i = 0; i < Model.MenuItems.AvailableEntrees.Count; i++)
+    {
+        <div class="menu-item">
+            <p>@(Model.MenuItems.AvailableEntrees[i].ToString())</p>
+            <p>$@(Model.MenuItems.AvailableEntrees[i].Price.ToString("0.00"))</p>
+            <p>@(Model.MenuItems.AvailableEntrees[i].Calories) Calories</p>
+            <p class="ingre-item">Ingredients: </p>
+            @for (int j = 0; j < Model.MenuItems.AvailableEntrees[i].Ingredients.Count; j++)
+            {
+                <p class="ingre-item">@(Model.MenuItems.AvailableEntrees[i].Ingredients[j])</p>
+            }
+        </div>
+    }
+    <h2 class="center">Sides</h2>
+    @for (int i = 0; i < Model.MenuItems.AvailableSides.Count; i++)
+    {
+        <div class="menu-item">
+            <p>@(Model.MenuItems.AvailableSides[i].ToString())</p>
+            <p>$@(Model.MenuItems.AvailableSides[i].Price.ToString("0.00"))</p>
+            <p>@(Model.MenuItems.AvailableSides[i].Calories) Calories</p>
+            <p class="ingre-item">Ingredients: </p>
+            @for (int j = 0; j < Model.MenuItems.AvailableSides[i].Ingredients.Count; j++)
+            {
+                <p class="ingre-item">@(Model.MenuItems.AvailableSides[i].Ingredients[j])</p>
+            }
+        </div>
+    }
+    <h2 class="center">Drinks</h2>
+    @for (int i = 0; i < Model.MenuItems.AvailableDrinks.Count; i++)
+    {
+        <div class="menu-item">
+            <p>@(Model.MenuItems.AvailableDrinks[i].ToString())</p>
+            <p>$@(Model.MenuItems.AvailableDrinks[i].Price.ToString("0.00"))</p>
+            <p>@(Model.MenuItems.AvailableDrinks[i].Calories) Calories</p>
+            <p class="ingre-item">Ingredients: </p>
+            @for (int j = 0; j < Model.MenuItems.AvailableDrinks[i].Ingredients.Count; j++)
+            {
+                <p class="ingre-item">@(Model.MenuItems.AvailableDrinks[i].Ingredients[j])</p>
+            }
+        </div>
+    }
+

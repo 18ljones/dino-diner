@@ -66,9 +66,17 @@ namespace DinoDiner.Menu
             {
                 List<Side> items = new List<Side>();
                 items.Add(new Fryceritops());
+                items.Add(new Fryceritops());
+                items.Add(new Fryceritops(Size.Large));
                 items.Add(new MeteorMacAndCheese());
+                items.Add(new MeteorMacAndCheese(Size.Medium));
+                items.Add(new MeteorMacAndCheese(Size.Large));
                 items.Add(new MezzorellaSticks());
+                items.Add(new MezzorellaSticks(Size.Medium));
+                items.Add(new MezzorellaSticks(Size.Large));
                 items.Add(new Triceritots());
+                items.Add(new Triceritots(Size.Medium));
+                items.Add(new Triceritots(Size.Large));
                 return items;
             }
         }

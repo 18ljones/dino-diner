@@ -103,5 +103,13 @@ namespace DinoDiner.Menu
             base.Calories = 420;
             base.Price = 0.99;
         }
+        /// <summary>
+        /// yes
+        /// </summary>
+        /// <param name="newSize">yes</param>
+        public MeteorMacAndCheese(Size newSize)
+        {
+            Size = newSize;
+        }
     }
 }

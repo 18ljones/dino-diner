@@ -1,14 +1,57 @@
-/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
-for details on configuring this project to bundle and minify static web assets. */
-body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#menuItems {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: #22B573;
+    height: 100px;
+    width: 100%;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.item {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 40px;
 }
 
+a {
+   color: #603813;
+   text-decoration: none;
+   font-family: Arial;
+   font-weight: bold;
+}
+a:hover{
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    color: #603813;
+    font-size: 50px;
+}
+
+#dino-text {
+    text-align: center;
+    color: #22B573;
+    font-size: 30px;
+}
+
+h2 {
+    color: #603813;
+    font-size: 40px;
+}
+
+.menu-item {
+    margin-left: 30%;
+    color: #22B573;
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.ingre-item {
+    color: #603813;
+}
