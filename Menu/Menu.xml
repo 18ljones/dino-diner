@@ -876,6 +876,12 @@
             Constructor for a Fryceritops Side menu item
             </summary>
         </member>
+        <member name="M:DinoDiner.Menu.Fryceritops.#ctor(DinoDiner.Menu.Size)">
+            <summary>
+            yes
+            </summary>
+            <param name="newSize"></param>
+        </member>
         <member name="T:DinoDiner.Menu.MeteorMacAndCheese">
             <summary>
             class for the Meteor Mac and Cheese Side menu item
@@ -913,6 +919,12 @@
             Constructor for a Fryceritops Side menu item
             </summary>
         </member>
+        <member name="M:DinoDiner.Menu.MeteorMacAndCheese.#ctor(DinoDiner.Menu.Size)">
+            <summary>
+            yes
+            </summary>
+            <param name="newSize">yes</param>
+        </member>
         <member name="T:DinoDiner.Menu.MezzorellaSticks">
             <summary>
             class for a Mezzorella Sticks Side menu item
@@ -946,6 +958,11 @@
             <returns>the name of the menu item</returns>
         </member>
         <member name="M:DinoDiner.Menu.MezzorellaSticks.#ctor">
+            <summary>
+            Constructor for a Fryceritops Side menu item
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.MezzorellaSticks.#ctor(DinoDiner.Menu.Size)">
             <summary>
             Constructor for a Fryceritops Side menu item
             </summary>
@@ -1013,6 +1030,11 @@
             <returns>the name of the menu item</returns>
         </member>
         <member name="M:DinoDiner.Menu.Triceritots.#ctor">
+            <summary>
+            Constructor for a Fryceritops Side menu item
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Triceritots.#ctor(DinoDiner.Menu.Size)">
             <summary>
             Constructor for a Fryceritops Side menu item
             </summary>
