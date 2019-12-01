@@ -12,6 +12,82 @@
     width: 100%;
 }
 
+.main {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+}
+
+#text-search {
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+#search-form {
+    margin-top: 20px;
+    background-color: #22B573;
+}
+
+#filter{
+    height: 50px;
+    width: 150px;
+    margin: 0px 75px 0px 75px;
+    
+}
+
+.menu-category-label{
+    margin-right: 200px;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.ingredient-label {
+    margin-right: 200px;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+#menu-category-text {
+    color: #603813;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#price-text {
+    color: #603813;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#exclude-ingredients-text {
+    color: #603813;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#search-text {
+    margin-right: 20px;
+    font-size: 18px;
+    color: #603813;
+}
+
+.price-label{
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+input[type=number]{
+    width: 50px;
+}
+
+label {
+    color: #603813;
+}
+
 .item {
     text-align: center;
     margin-top: 20px;
@@ -46,12 +122,13 @@ h2 {
 }
 
 .menu-item {
-    margin-left: 30%;
     color: #22B573;
     font-size: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    width: 75%;
 }
 .ingre-item {
+    text-align: left;
     color: #603813;
 }

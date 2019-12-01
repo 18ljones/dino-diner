@@ -13,6 +13,20 @@ namespace DinoDiner.Menu
     public class Menu
     {
         /// <summary>
+        /// returns a list of all menu items including combos
+        /// </summary>
+        public List<MenuItem> AllMenuItems
+        {
+            get
+            {
+                List<MenuItem> items = new List<MenuItem>();
+                items.AddRange(AvailableCombos);
+                items.AddRange(AvailableMenuItems);
+                return items;
+            }
+        }
+
+        /// <summary>
         /// returns a list of every single item on the menu for Dino Diner
         /// </summary>
         public List<MenuItem> AvailableMenuItems
@@ -138,6 +152,174 @@ namespace DinoDiner.Menu
                 menu += drinks[i].ToString().Substring(6) + "\n";
             }
             return menu;
+        }
+
+        /// <summary>
+        /// returns all possible ingredients
+        /// </summary>
+        public HashSet<string> PossibleIngredients
+        {
+            get
+            {
+                HashSet<string> ingredients = new HashSet<string>();
+                for (int i = 0; i < this.AvailableMenuItems.Count; i++)
+                {
+                    for(int j = 0; j < AvailableMenuItems[i].Ingredients.Count; j++)
+                    {
+                        if (!ingredients.Contains(AvailableMenuItems[i].Ingredients[j]))
+                        {
+                            ingredients.Add(AvailableMenuItems[i].Ingredients[j]);
+                        }
+                    }
+                }
+                return ingredients;
+            }
+        }
+
+        /// <summary>
+        /// allows user to search for specific menu items
+        /// </summary>
+        /// <param name="menuItems"></param>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        public static List<MenuItem> OnSearch(List<MenuItem> menuItems, string search)
+        {
+            List<MenuItem> items = new List<MenuItem>();
+
+            foreach (MenuItem j in menuItems)
+            {
+                if (j.ToString().ToLower().Contains(search.ToLower()))
+                {
+                    items.Add(j);
+                }
+            }
+
+            return items;
+        }
+
+        /// <summary>
+        /// yes
+        /// </summary>
+        /// <param name="menuItems"></param>
+        /// <param name="filters"></param>
+        /// <returns></returns>
+        public static List<MenuItem> OnCategoryFilter(List<MenuItem> menuItems, List<string> filters)
+        {
+            List<MenuItem> items = new List<MenuItem>();
+
+            foreach (MenuItem j in menuItems)
+            {
+                if (filters.Contains("Combo"))
+                {
+                    if (j is CretaceousCombo combo)
+                    {
+                        items.Add(combo);
+                    }
+                }
+                if (filters.Contains("Entree"))
+                {
+                    if (j is Entree entree)
+                    {
+                        items.Add(entree);
+                    }
+                }
+                if (filters.Contains("Side"))
+                {
+                    if(j is Side side)
+                    {
+                        items.Add(side);
+                    }
+                }
+                if (filters.Contains("Drink"))
+                {
+                    if(j is Drink drink)
+                    {
+                        items.Add(drink);
+                    }
+                }
+            }
+
+            return items;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="menuItems"></param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        public static List<MenuItem> OnPriceFilter(List<MenuItem> menuItems, float min, float max)
+        {
+            List<MenuItem> items = new List<MenuItem>();
+
+            foreach(MenuItem j in menuItems)
+            {
+                if (j.Price >= min && j.Price <= max)
+                    items.Add(j);
+            }
+
+            return items;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="menuItems"></param>
+        /// <param name="min"></param>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static List<MenuItem> OnPriceFilter(List<MenuItem> menuItems, float min, string s)
+        {
+            List<MenuItem> items = new List<MenuItem>();
+
+            foreach (MenuItem j in menuItems)
+            {
+                if (s == "min") {
+                    if (j.Price >= min)
+                        items.Add(j);
+                }
+                else if(s == "max")
+                {
+                    if (j.Price <= min)
+                        items.Add(j);
+                }
+            }
+
+            return items;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="menuItems"></param>
+        /// <param name="ingredients"></param>
+        /// <returns></returns>
+        public static List<MenuItem> OnIngredientFilter(List<MenuItem> menuItems, List<string> ingredients)
+        {
+            List<MenuItem> items = new List<MenuItem>();
+
+
+            bool isGood = true;
+            foreach(MenuItem j in menuItems)
+            {
+                foreach(string ing in ingredients)
+                {
+                    if (j.Ingredients.Contains(ing))
+                    {
+                        isGood = false;
+                        break;
+                    }
+                }
+                if (isGood)
+                    items.Add(j);
+                else
+                {
+                    isGood = true;
+                }
+            }
+
+            return items;
         }
 
     }

@@ -712,9 +712,19 @@
             public class for the Menu object
             </summary>
         </member>
+        <member name="P:DinoDiner.Menu.Menu.AllMenuItems">
+            <summary>
+            returns a list of all menu items including combos
+            </summary>
+        </member>
         <member name="P:DinoDiner.Menu.Menu.AvailableMenuItems">
             <summary>
             returns a list of every single item on the menu for Dino Diner
+            </summary>
+        </member>
+        <member name="P:DinoDiner.Menu.Menu.AvailableCombos">
+            <summary>
+            returns a list of the available combos
             </summary>
         </member>
         <member name="P:DinoDiner.Menu.Menu.AvailableEntrees">
@@ -737,6 +747,53 @@
             returns the whole menu in string format
             </summary>
             <returns>the whole menu in string format</returns>
+        </member>
+        <member name="P:DinoDiner.Menu.Menu.PossibleIngredients">
+            <summary>
+            returns all possible ingredients
+            </summary>
+        </member>
+        <member name="M:DinoDiner.Menu.Menu.OnSearch(System.Collections.Generic.List{DinoDiner.Menu.MenuItem},System.String)">
+            <summary>
+            allows user to search for specific menu items
+            </summary>
+            <param name="menuItems"></param>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DinoDiner.Menu.Menu.OnCategoryFilter(System.Collections.Generic.List{DinoDiner.Menu.MenuItem},System.Collections.Generic.List{System.String})">
+            <summary>
+            yes
+            </summary>
+            <param name="menuItems"></param>
+            <param name="filters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DinoDiner.Menu.Menu.OnPriceFilter(System.Collections.Generic.List{DinoDiner.Menu.MenuItem},System.Single,System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="menuItems"></param>
+            <param name="min"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DinoDiner.Menu.Menu.OnPriceFilter(System.Collections.Generic.List{DinoDiner.Menu.MenuItem},System.Single,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="menuItems"></param>
+            <param name="min"></param>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DinoDiner.Menu.Menu.OnIngredientFilter(System.Collections.Generic.List{DinoDiner.Menu.MenuItem},System.Collections.Generic.List{System.String})">
+            <summary>
+            
+            </summary>
+            <param name="menuItems"></param>
+            <param name="ingredients"></param>
+            <returns></returns>
         </member>
         <member name="T:DinoDiner.Menu.MenuItem">
             <summary>
